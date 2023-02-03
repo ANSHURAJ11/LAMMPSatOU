@@ -137,12 +137,12 @@ First, to understand dislocations, I recommend these readings depending on how m
 
   - Beginner-level:
 
-     - D. Hull, D.J. Bacon, [Introduction of Dislocations](https://www.amazon.com/Introduction-Dislocations-Goldsmiths-Professor-University/dp/0080966721), 5th edition, 2011 [[PDF]                 (https://drive.google.com/file/d/0Bxsx9iwZLpZxRktuUVozXzB6QWs/view?usp=sharing)]
+     - D. Hull, D.J. Bacon, [Introduction of Dislocations](https://www.amazon.com/Introduction-Dislocations-Goldsmiths-Professor-University/dp/0080966721), 5th edition, 2011 [[PDF](https://drive.google.com/file/d/0Bxsx9iwZLpZxRktuUVozXzB6QWs/view?usp=sharing)]
      - Yu N Osetsky, D J Bacon, [An atomic-level model for studying the dynamics of edge                dislocations in metals](http://dx.doi.org/10.1088/0965-0393/11/4/302), Modelling Simul.          Mater. Sci. Eng. 11 (2003) 427
      - Wu-Rong Jian, Min Zhang, Shuozhi Xu, Irene J. Beyerlein, [Atomistic simulations of              dynamics of an edge dislocation and its interaction with a void in copper: A comparative        study](http://dx.doi.org/10.1088/1361-651X/ab8358), Modelling Simul. Mater. Sci. Eng. 28        (2020) 045004
   - Intermediate-level:
 
-     - D.J. Bacon, Y.N. Osetsky, D. Rodney, [Dislocation-obstacle interactions at the atomic            level](http://dx.doi.org/10.1016/S1572-4859(09)01501-0), in Dislocations in Solids, 15          (2009) 1--90 [PDF](http://ilm-perso.univ-lyon1.fr/~drodney/dr_articles/2009_Dislo_In_Solids%5BBacon_Osetsky_Rodney%5D.pdf)
+     - D.J. Bacon, Y.N. Osetsky, D. Rodney, [Dislocation-obstacle interactions at the atomic            level](http://dx.doi.org/10.1016/S1572-4859(09)01501-0), in Dislocations in Solids, 15          (2009) 1--90 [[PDF](http://ilm-perso.univ-lyon1.fr/~drodney/dr_articles/2009_Dislo_In_Solids%5BBacon_Osetsky_Rodney%5D.pdf)]
      - Jaehyun Cho, Till Junge, Jean-François Molinari, Guillaume Anciaux, [Toward a 3D coupled        atomistic and discrete dislocation dynamics simulation: dislocation core structures and          Peierls stresses with several character angles in FCC aluminum](http://dx.doi.org/10.1186/s40323-015-0028-6), Adv. Model. Simul. Eng. Sci. 2 (2015) 12
      - Vasily V. Bulatov, Wei Cai, [Computer Simulations of Dislocations](https://www.amazon.com/Computer-Simulations-Dislocations-Materials-Modelling/dp/0198526148),          2006 [[PDF](https://drive.google.com/file/d/0Bxsx9iwZLpZxMHl2cVp6QVdRWWM/view?usp=sharing)]
      - Johannes Weertman, Julia R. Weertman, [Elementary Dislocation Theory](https://www.amazon.com/Elementary-Dislocation-Theory-Johannes-Weertman/dp/0195069005), 1992
