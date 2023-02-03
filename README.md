@@ -59,6 +59,7 @@ LAMMPS is an open-source software package for atomistic simulations. So you firs
   - [Molecular dynamics (MD)](https://en.wikipedia.org/wiki/Molecular_dynamics)
   - Molecular statics (MS)
   - Monte Carlo method, e.g., [kinetic Monte Carlo](https://en.wikipedia.org/wiki/Kinetic_Monte_Carlo)
+  
 To learn the basics of MD and MS, please read, respectively, Chapter 9 and Chapter 6 of [this book](https://drive.google.com/file/d/0Bxsx9iwZLpZxS0RENllIRnd2LWc/view?resourcekey=0--hdU-45Sb2q9H8VTZo_C9Q). The Google Drive link is private, so you need to request access.
 
 And here are more references on MD:
@@ -66,6 +67,7 @@ And here are more references on MD:
   - [Introduction to Molecular Dynamics Simulation](http://2009.igem.org/wiki/images/3/3e/Introduction_to_molecular_Dynamics_Simulation.pdf)
   - [Basic Molecular Dynamics](http://li.mit.edu/Archive/Papers/05/Li05-2.8.pdf)
   - [A Molecular Dynamics Primer](http://cms.sjtu.edu.cn/doc/reading/md/A_Molecular_Dynamics_Primer_(Ercolessi).pdf)
+  
 To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials).
 
 Note: LAMMPS is installed on OSCER, so you don't need to install it yourself.
@@ -73,7 +75,9 @@ Note: LAMMPS is installed on OSCER, so you don't need to install it yourself.
 First, to understand the generalized stacking fault energy (GSFE) curve, read these materials:
 
   - Sections 2 & 3 of: Shuozhi Xu, Yanqing Su, Lauren T.W. Smith, Irene J. Beyerlein, [Frank-       Read source operation in six body-centered cubic refractory metals]             (http://dx.doi.org/10.1016/j.jmps.2020.104017), J. Mech. Phys. Solids 141 (2020) 104017
+  
   - Shuozhi Xu, Emily Hwang, Wu-Rong Jian, Yanqing Su, Irene J. Beyerlein, [Atomistic               calculations of the generalized stacking fault energies in two refractory multi-principal       element alloys](http://dx.doi.org/10.1016/j.intermet.2020.106844), Intermetallics 124 (2020)     106844
+  
 The GSFE curve is just one curve taken from the GSFE surface, also known as the γ-surface, which is usually calculated in FCC metals. To know more about the GSFE surface, please read
 
   - Yanqing Su, Shuozhi Xu, Irene J. Beyerlein, [Density functional theory calculations of           generalized stacking fault energy surfaces for eight face-centered cubic transition metals](http://dx.doi.org/10.1063/1.5115282), J. Appl. Phys. 126 (2019) 105112
@@ -83,9 +87,11 @@ When you are ready to run simulations, download five files to a local directory 
    - `lmp_gsfe.data`, which is the LAMMPS data file
    - `lmp_gsfe.in`, which is the LAMMPS input file
    - `gsfe_curve.sh`, which is the post-processing bash script
+   
 The fifth file is
 
    - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded from      [this page](https://github.com/wrj2018/Intermetallics_2020)
+   
 Then on OSCER, create a new directory in your $HOME. Say the directory is named oscer_gsfe. The command is
 
 `mkdir oscer_gsfe`
@@ -107,7 +113,9 @@ then hit Return. To check the status of the job, type
 then hit Return. You will see two lines. In the first line, there is a term `ST`, which stands for 'status'. If, at the same location of the second line, you see `PD`, the job is pending. Recheck the status later. If you see `R`, the job is running. If you only see one line, the job is finished. This, however, can mean one of the two things:
 
   - The job was finished because of an error. In this case, check these three files:                `lmp_gsfe.out`, `lmp_gsfe.err`, and `log.lammps`. They provide you information on what caused     the error(s). In particular, the last file is the log file of LAMMPS, which would present an     error message in the last line. Please refer to [this page](https://lammps.sandia.gov/doc/Errors_messages.html) for the explanation of each error               message. Once you figure out what went wrong, fix the problem, and resubmit the job
+  
   - The job was finished successfully. In this case, the file `lmp_gsfe.err` is empty. Proceed       to the next step.
+  
 You will find a lot of files in the directory. One file is called `gsfe_ori`. In the same directory on OSCER, type
 
 `sh gsfe_curve.sh`
