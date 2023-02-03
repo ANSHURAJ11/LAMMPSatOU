@@ -147,9 +147,11 @@ When you are ready to run simulations, download four files to a local directory 
    - `lmp_peierls.batc`h, which is for job submission
    - `lmp_peierls.data`, which is the LAMMPS data file, containing a screw dislocation on the         {112} plane
    - `lmp_peierls.in`, which is the LAMMPS input file
+   - 
 The fourth file is
 
    - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded         from [this page](https://github.com/wrj2018/Intermetallics_2020)
+   - 
 Then on OSCER, create a new directory, `oscer_peierls`, in your `$HOME`, by typing
 
 `mkdir oscer_peierls`
