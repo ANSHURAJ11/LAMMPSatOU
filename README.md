@@ -1,1 +1,1 @@
-# LAMMPSatOU
+# Introduction
