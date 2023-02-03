@@ -160,7 +160,7 @@ When you are ready to run simulations, download four files to a local directory 
 The fourth file is
 
    - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded         from [this page](https://github.com/wrj2018/Intermetallics_2020)
-   - 
+   
 Then on OSCER, create a new directory, `oscer_peierls`, in your `$HOME`, by typing
 
 `mkdir oscer_peierls`
