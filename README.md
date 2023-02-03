@@ -197,6 +197,7 @@ In a general case, however,
 
    - The dislocation core may move along the negative x direction, depending on the Burgers          vector of the dislocation and the shear direction.
    - Sometimes there is more than one point on the stress-strain curve at which the stress-          strain relation starts to deviate from linearity. Let's say there are three such points and      we call them `P1`, `P2`, and `P3`. Then the point at which the dislocation core starts to        move may be one of them, or none of them. In other words, do not assume that any of these        points is the critical point associated with the Peierls stress. If the point at which the      dislocation core starts to move does not correspond to any turning point identified on the      stress-strain curve, go with the former point instead of the latter.
+   
 Note: If you use any file from this section in your published work, please cite
 
    - Shuozhi Xu, Yanqing Su, Wu-Rong Jian, Irene J. Beyerlein, [Local slip resistances in equal      molar MoNbTi multi-principal element alloy](http://dx.doi.org/10.1016/j.actamat.2020.10.042), Acta Mater. 202 (2021) 68--79
