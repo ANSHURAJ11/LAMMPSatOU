@@ -81,6 +81,7 @@ First, to understand the generalized stacking fault energy (GSFE) curve, read th
 The GSFE curve is just one curve taken from the GSFE surface, also known as the γ-surface, which is usually calculated in FCC metals. To know more about the GSFE surface, please read
 
   - Yanqing Su, Shuozhi Xu, Irene J. Beyerlein, [Density functional theory calculations of           generalized stacking fault energy surfaces for eight face-centered cubic transition metals](http://dx.doi.org/10.1063/1.5115282), J. Appl. Phys. 126 (2019) 105112
+  
 When you are ready to run simulations, download five files to a local directory local_gsfe on your local computer. The first four files can be downloaded from this GitHub repository, including
 
    - `lmp_gsfe.batch`, which is for job submission
