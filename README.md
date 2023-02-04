@@ -4,12 +4,16 @@ As a graduate research assistant, you will learn atomistic simulations via LAMMP
 1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at the Center for Scientific Computing at OU.
 2. Wait for the user account to be approved --- you will receive an email. In what follows, I will assume that your account is `username` and your password is `username-pw`.
 3. To use Pod, these webpages may help:
-   - [HPC at OU]()
-   + [OSCER]()
+   - [HPC at OU](https://www.ou.edu/oscer/getting_started/getting_started_hpc_intro)
+   + [OSCER](https://www.ou.edu/oscer/getting_started/getting_started_using_oscer)
    * [SLURM](https://slurm.schedmd.com/quickstart.html)
-   - [SLURM at OU]()
+   - [SLURM at OU](https://www.ou.edu/oscer/support/running_jobs_schooner)
+
+# OURRstore: OU and Regional Research Store tape archive
+  - [OURRstore](https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store) acount
+  - Follow the instructions told by OURRstore officials.
 # OU VPN
-To connect to OSCER, you need the [OU VPN] unless you are using the [campus network]().
+To connect to OSCER, you need the [OU VPN](https://www.ou.edu/marcomm/cms/get-started/vpn) unless you are using the [campus network]().
 # FTP client
 You need a file transfer protocol (FTP) client to transfer data between OSCER and your local computer. Feel free to use any FTP client. Here is a [selected list](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software).
 
@@ -25,11 +29,11 @@ I personally recommend FileZilla. Below is an instruction:
         + Password: username-pw
         * Connect
   4. The next time you use it, File --> Site Manager --> select 'OSCER', then 'Connect'.
-  5. To transfer files between Pod and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
+  5. To transfer files between OSCER and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
 # Terminal emulator
 You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel free to use any terminal emulator. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_terminal_emulators).
 
-On Windows, OU recommends [Putty]().
+On Windows, OU recommends [Putty](https://www.ou.edu/oscer/support/machine_access).
 
 On Mac and Linux, without installing any new emulator, you may open the default terminal and type
 
@@ -48,7 +52,7 @@ If you are not familiar with Linux, please refer to these webpages:
   - [Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
   - [Basic Linux commands](https://www.hostinger.com/tutorials/linux-commands)
 
-You also need a software package to edit text files on Pod. Again, feel free to use anything. Here is [a selected list](https://en.wikipedia.org/wiki/List_of_text_editors). I recommend vim, which is already installed on Pod (and most, if not all, Mac and Linux systems). If you are not familiar with vim, please refer to these webpages:
+You also need a software package to edit text files on OSCER. Again, feel free to use anything. Here is [a selected list](https://en.wikipedia.org/wiki/List_of_text_editors). I recommend vim, which is already installed on Pod (and most, if not all, Mac and Linux systems). If you are not familiar with vim, please refer to these webpages:
 
   - [vim 101](https://www.engadget.com/2012-07-10-vim-how-to.html)
   - [Getting started with vim](https://opensource.com/article/19/3/getting-started-vim)
@@ -74,7 +78,7 @@ Note: LAMMPS is installed on OSCER, so you don't need to install it yourself.
 # An example: Calculating the GSFE curve in a BCC metal
 First, to understand the generalized stacking fault energy (GSFE) curve, read these materials:
 
-  - Sections 2 & 3 of: Shuozhi Xu, Yanqing Su, Lauren T.W. Smith, Irene J. Beyerlein, [Frank-       Read source operation in six body-centered cubic refractory metals]             (http://dx.doi.org/10.1016/j.jmps.2020.104017), J. Mech. Phys. Solids 141 (2020) 104017
+  - Sections 2 & 3 of: Shuozhi Xu, Yanqing Su, Lauren T.W. Smith, Irene J. Beyerlein, [Frank-       Read source operation in six body-centered cubic refractory metals](http://dx.doi.org/10.1016/j.jmps.2020.104017), J. Mech. Phys. Solids 141 (2020) 104017
   
   - Shuozhi Xu, Emily Hwang, Wu-Rong Jian, Yanqing Su, Irene J. Beyerlein, [Atomistic               calculations of the generalized stacking fault energies in two refractory multi-principal       element alloys](http://dx.doi.org/10.1016/j.intermet.2020.106844), Intermetallics 124 (2020)     106844
   
@@ -91,7 +95,7 @@ When you are ready to run simulations, download five files to a local directory 
    
 The fifth file is
 
-   - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded from      [this page](https://github.com/wrj2018/Intermetallics_2020)
+   - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded from [this page](https://github.com/wrj2018/Intermetallics_2020)
    
 Then on OSCER, create a new directory in your $HOME. Say the directory is named oscer_gsfe. The command is
 
