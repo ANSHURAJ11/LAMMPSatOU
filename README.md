@@ -158,7 +158,7 @@ Some Google Drive links above are private. To have access, [email me](shuozhixu@
 
 When you are ready to run simulations, download four files to a local directory `local_peierls` on your local computer. The first three files can be downloaded from this GitHub repository, including
 
-   - `lmp_peierls.batc`h, which is for job submission
+   - `lmp_peierls.batch`, which is for job submission
    - `lmp_peierls.data`, which is the LAMMPS data file, containing a screw dislocation on the         {112} plane
    - `lmp_peierls.in`, which is the LAMMPS input file
    
