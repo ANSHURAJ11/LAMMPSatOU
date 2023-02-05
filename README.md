@@ -1,6 +1,6 @@
 # Introduction
-I am a graduate research assistant, and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER - OU Supercomputing Center for Education and Research](https://www.ou.edu/oscer).
-# OSCER
+I am a graduate research assistant, and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer).
+# OSCER (OU Supercomputing Center for Education and Research)
 1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at the Center for Scientific Computing at OU.
 2. Wait for the user account to be approved --- you will receive an email. In what follows, I will assume that your account is `username` and your password is `username-pw`.
 3. To use Pod, these webpages may help:
