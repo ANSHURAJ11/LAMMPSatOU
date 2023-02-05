@@ -9,7 +9,7 @@ I am a graduate research assistant, and today you will learn atomistic simulatio
    * [SLURM](https://slurm.schedmd.com/quickstart.html)
    - [SLURM at OU](https://www.ou.edu/oscer/support/running_jobs_schooner)
 
-# OURRstore: OU and Regional Research Store tape archive
+# OURRstore (OU and Regional Research Store tape archive)
   - [OURRstore](https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store) acount
   - Follow the instructions told by OURRstore officials.
 # OU VPN
