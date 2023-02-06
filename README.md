@@ -10,10 +10,11 @@ I am a graduate research assistant, and today you will learn atomistic simulatio
    - [SLURM at OU](https://www.ou.edu/oscer/support/running_jobs_schooner)
 
 # OURRstore (OU and Regional Research Store tape archive)
-  - [OURRstore](https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store) acount
+  - Request for [OURRstore](https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store) acount
   - Follow the instructions told by OURRstore officials.
+  - Attend the training session before using it and any user can request OSCER for training.
 # OU VPN
-To connect to OSCER, you need the [OU VPN](https://www.ou.edu/marcomm/cms/get-started/vpn) unless you are using the [campus network]().
+To connect to OSCER, you may use the [OU VPN](https://www.ou.edu/marcomm/cms/get-started/vpn) unless you are using the [campus network](). OU VPN helps you to operate safely. But most of the time you don't need to connect to any VPN.
 # FTP client
 You need a file transfer protocol (FTP) client to transfer data between OSCER and your local computer. Feel free to use any FTP client. Here is a [selected list](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software).
 
@@ -23,7 +24,7 @@ I personally recommend FileZilla. Below is an instruction:
   2. Open it.
   3. The first time you use it, File --> Site Manager --> New site --> rename it 'OSCER', then        in the window on the right hand side:
         - Protocol: SFTP - SSH File Transfer Protocol
-        - Host: dtn2.oscer.ou.edu
+        - Host: schooner.oscer.ou.edu
         - Logon Type: Normal
         - User: username
         + Password: username-pw
