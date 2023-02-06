@@ -1,6 +1,6 @@
 # Introduction
 I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM3)](https://shuozhixu.github.io/group.html) group at the [University of Oklahoma (OU)](https://www.ou.edu/), and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer).
-# OSCER (OU Supercomputing Center for Education and Research) In the first sentence, please state that you are a GRA in the group of Computational Materials, Mechanics, and Manufacturing at OU, and include a link to our group
+# OSCER (OU Supercomputing Center for Education and Research)
 1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at the Center for Scientific Computing at OU. While requesting for OSCER account, we have to mention our group name like "cm3atou" which is used by our group members only. Every new users should request for an account mentioning their group name only.
 
 NOTE: Using other's group name is a crime and OU can take any action against that user.
