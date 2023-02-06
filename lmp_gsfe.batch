@@ -1,23 +1,28 @@
-#!/bin/bash -l
-#SBATCH --job-name=gsfe
-#SBATCH --output=lmp_gsfe.out
-#SBATCH --error=lmp_gsfe.err
+#!/bin/bash
+#
+#SBATCH --partition=normal
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4
-#SBATCH -t 100:00:00
-
+#SBATCH --ntasks=16
+#SBATCH --mem=1024
+#SBATCH --output=username_%J_stdout.txt
+#SBATCH --error=username_%J_stderr.txt
+#SBATCH --time=12:00:00
+#SBATCH --mail-user=username@ou.edu
+#SBATCH --mail-type=ALL
+#
+#################################################
+hostname
 # Defining the executable and scratch directory
 
-cd ${SLURM_SUBMIT_DIR}
-
-module load intel/18
-module load lammps/3Mar20
-/bin/hostname
+#module load intel/18
+module load LAMMPS/11Aug17-gompi-2017b
+#/bin/hostname
 
 # execute lammps
 echo "begin lammps"
 echo "the job is ${SLURM_JOB_ID}"
 
-mpirun -np $SLURM_NPROCS /sw/csc/lammps/3Mar20/lmp -in lmp_gsfe.in
+mpirun -np $SLURM_NPROCS lmp_schooner -in C_V.in
 
 echo "lammps out"
+
