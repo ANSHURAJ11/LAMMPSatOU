@@ -4,6 +4,8 @@ I am a graduate research assistant in the [Computational Materials, Mechanics, a
 1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM<sup>3</sup> group, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, there is a chance your request will be delayed or even denied.
 
 2. Wait for the user account to be approved --- you will receive an email. In what follows, I will assume that your account is `username` and your password is `username-pw`.
+  - $HOME directory has a storage space of 20GB. To access more space, members in our group should move files to /ourdisk/hpc/cm3atou/username. [Note: this path is for our group only]. There, the maximum storage space (for our group) is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, new users can refer to this [page](https://www.ou.edu/oscer/support/storage_on_hpc)
+  
 3. To use OSCER, these webpages may help:
    - [HPC at OU](https://www.ou.edu/oscer/getting_started/getting_started_hpc_intro)
    + [OSCER](https://www.ou.edu/oscer/getting_started/getting_started_using_oscer)
