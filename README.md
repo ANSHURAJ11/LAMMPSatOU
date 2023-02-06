@@ -1,7 +1,7 @@
 # Introduction
-I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM3)](https://shuozhixu.github.io/group.html) group at the [University of Oklahoma (OU)](https://www.ou.edu/), and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer).
+I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM</sup>)](https://shuozhixu.github.io/group.html) group at the [University of Oklahoma (OU)](https://www.ou.edu/), and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer).
 # OSCER (OU Supercomputing Center for Education and Research)
-1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at the Center for Scientific Computing at OU. While requesting for OSCER account, we have to mention our group name like "cm3atou" which is used by our group members only. Every new users should request for an account mentioning their group name only.
+1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM3 group, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, there is a chance your request will be delayed or even denied.
 
 NOTE: Using other's group name is a crime and OU can take any action against that user.
 
