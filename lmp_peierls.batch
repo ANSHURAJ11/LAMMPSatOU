@@ -1,18 +1,22 @@
-#!/bin/bash -l
+#!/bin/bash
+#
 #SBATCH --job-name=peierls
+#SBATCH --partition=normal
 #SBATCH --output=lmp_peierls.out
 #SBATCH --error=lmp_peierls.err
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=20
 #SBATCH -t 100:00:00
+#SBATCH --mail-user=username@ou.edu
+#SBATCH --mail-type=ALL
 
 # Defining the executable and scratch directory
 
 cd ${SLURM_SUBMIT_DIR}
 
-module load intel/18
-module load lammps/3Mar20
-/bin/hostname
+#module load intel/18
+module load LAMMPS/11Aug17-gompi-2017b
+#/bin/hostname
 
 # execute lammps
 echo "begin lammps"
