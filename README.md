@@ -1,9 +1,12 @@
 # Introduction
 I am a graduate research assistant, and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer).
 # OSCER (OU Supercomputing Center for Education and Research)
-1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at the Center for Scientific Computing at OU.
+1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at the Center for Scientific Computing at OU. While requesting for OSCER account, we have to mention our group name like "cm3atou" which is used by our group members only. Every new users should request for an account mentioning their group name only.
+
+NOTE: Using other's group name is a crime and OU can take any action against that user.
+
 2. Wait for the user account to be approved --- you will receive an email. In what follows, I will assume that your account is `username` and your password is `username-pw`.
-3. To use Pod, these webpages may help:
+3. To use OSCER, these webpages may help:
    - [HPC at OU](https://www.ou.edu/oscer/getting_started/getting_started_hpc_intro)
    + [OSCER](https://www.ou.edu/oscer/getting_started/getting_started_using_oscer)
    * [SLURM](https://slurm.schedmd.com/quickstart.html)
@@ -31,6 +34,9 @@ I personally recommend FileZilla. Below is an instruction:
         * Connect
   4. The next time you use it, File --> Site Manager --> select 'OSCER', then 'Connect'.
   5. To transfer files between OSCER and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
+  
+ - $HOME directory has a storage space of 20GB. To access more space, members in our group should move files to /ourdisk/hpc/cm3atou/username. [NOTE: this path is for our group only]. There, the maximum storage space (for our group) is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, new users can refer to this [page](https://www.ou.edu/oscer/support/storage_on_hpc)
+ - A user should first use $HOME, then OURdisk. For some files on OURdisk, he/she can archieve them on OURRstore.
 # Terminal emulator
 You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel free to use any terminal emulator. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_terminal_emulators).
 
