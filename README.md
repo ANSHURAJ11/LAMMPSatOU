@@ -35,7 +35,7 @@ I personally recommend FileZilla. Below is an instruction:
   4. The next time you use it, File --> Site Manager --> select 'OSCER', then 'Connect'.
   5. To transfer files between OSCER and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
   
- - $HOME directory has a storage space of 20GB. To access more space, members in our group should move files to /ourdisk/hpc/cm3atou/username. [`NOTE`: this path is for our group only]. There, the maximum storage space (for our group) is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, new users can refer to this [page](https://www.ou.edu/oscer/support/storage_on_hpc)
+ - $HOME directory has a storage space of 20GB. To access more space, members in our group should move files to /ourdisk/hpc/cm3atou/username. [[NOTE](): this path is for our group only]. There, the maximum storage space (for our group) is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, new users can refer to this [page](https://www.ou.edu/oscer/support/storage_on_hpc)
  - A user should first use $HOME, then OURdisk. For some files on OURdisk, he/she can archieve them on OURRstore.
 # Terminal emulator
 You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel free to use any terminal emulator. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_terminal_emulators).
