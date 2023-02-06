@@ -1,9 +1,7 @@
 # Introduction
 I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) group at the [University of Oklahoma (OU)](https://www.ou.edu/), and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer).
 # OSCER (OU Supercomputing Center for Education and Research)
-1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM3 group, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, there is a chance your request will be delayed or even denied.
-
-NOTE: Using other's group name is a crime and OU can take any action against that user.
+1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM<sup>3</sup> group, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, there is a chance your request will be delayed or even denied.
 
 2. Wait for the user account to be approved --- you will receive an email. In what follows, I will assume that your account is `username` and your password is `username-pw`.
 3. To use OSCER, these webpages may help:
@@ -12,11 +10,7 @@ NOTE: Using other's group name is a crime and OU can take any action against tha
    * [SLURM](https://slurm.schedmd.com/quickstart.html)
    - [SLURM at OU](https://www.ou.edu/oscer/support/running_jobs_schooner)
 
-# OURRstore (OU and Regional Research Store tape archive)
-  - Request for [OURRstore](https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store) acount
-  - Follow the instructions told by OURRstore officials.
-  - Attend the training session before using it and any user can request OSCER for training.
-# OU VPN
+# OU VPN (optional)
 To connect to OSCER, you may use the [OU VPN](https://www.ou.edu/marcomm/cms/get-started/vpn) unless you are using the [campus network](). OU VPN helps you to operate safely. But most of the time you don't need to connect to any VPN.
 # FTP client
 You need a file transfer protocol (FTP) client to transfer data between OSCER and your local computer. Feel free to use any FTP client. Here is a [selected list](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software).
@@ -35,7 +29,7 @@ I personally recommend FileZilla. Below is an instruction:
   4. The next time you use it, File --> Site Manager --> select 'OSCER', then 'Connect'.
   5. To transfer files between OSCER and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
   
- - $HOME directory has a storage space of 20GB. To access more space, members in our group should move files to /ourdisk/hpc/cm3atou/username. [[NOTE](): this path is for our group only]. There, the maximum storage space (for our group) is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, new users can refer to this [page](https://www.ou.edu/oscer/support/storage_on_hpc)
+ - $HOME directory has a storage space of 20GB. To access more space, members in our group should move files to /ourdisk/hpc/cm3atou/username. [Note: this path is for our group only]. There, the maximum storage space (for our group) is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, new users can refer to this [page](https://www.ou.edu/oscer/support/storage_on_hpc)
  - A user should first use $HOME, then OURdisk. For some files on OURdisk, he/she can archieve them on OURRstore.
 # Terminal emulator
 You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel free to use any terminal emulator. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_terminal_emulators).
