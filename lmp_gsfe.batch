@@ -7,22 +7,22 @@
 #SBATCH --output=username_%J_stdout.txt
 #SBATCH --error=username_%J_stderr.txt
 #SBATCH --time=12:00:00
-#SBATCH --mail-user=username@ou.edu
+#SBATCH --mail-user=email@ou.edu
 #SBATCH --mail-type=ALL
 #
 #################################################
-hostname
+ssh schooner.oscer.ou.edu
 # Defining the executable and scratch directory
 
 #module load intel/18
 module load LAMMPS/11Aug17-gompi-2017b
-#/bin/hostname
+/bin/hostname
 
 # execute lammps
 echo "begin lammps"
 echo "the job is ${SLURM_JOB_ID}"
 
-mpirun -np $SLURM_NPROCS lmp_schooner -in C_V.in
+mpirun -np $SLURM_NPROCS lmp_schooner -in lmp_gsfe.in
 
 echo "lammps out"
 
