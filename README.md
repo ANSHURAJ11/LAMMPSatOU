@@ -1,5 +1,5 @@
 # Introduction
-I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) group at the [University of Oklahoma (OU)](https://www.ou.edu/), and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer).
+I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) group at the [University of Oklahoma (OU)](https://www.ou.edu/), and today you will learn atomistic simulations via LAMMPS on OU cluster named [OSCER](https://www.ou.edu/oscer). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB).
 # OSCER (OU Supercomputing Center for Education and Research)
 1. [Request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM<sup>3</sup> group, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, there is a chance your request will be delayed or even denied.
 
