@@ -7,8 +7,8 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
 #SBATCH --mem=1024
-#SBATCH -t 100:00:00
-#SBATCH --mail-user=username@ou.edu
+#SBATCH --time=12:00:00
+#SBATCH --mail-user=youremailaddress@yourinstitution.edu
 #SBATCH --mail-type=ALL
 
 # Defining the executable and scratch directory
