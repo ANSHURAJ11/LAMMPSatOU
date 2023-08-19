@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#SBATCH --partition=normal
+#SBATCH --partition=cm3atou
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
 #SBATCH --mem=1024
