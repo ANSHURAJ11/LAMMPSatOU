@@ -112,8 +112,6 @@ then hit Return. Then submit the job by typing
 
 `sbatch lmp_gsfe.batch` 
 
-Note: The CM<sup>3</sup> group members can only use partition cm3atou. If one were to use an OU-wide partition, change the partition name to normal
-
 then hit Return. To check the status of the job, type
 
 `squeue -u username`
@@ -182,8 +180,6 @@ Then, in your terminal emulator, type
 then hit Return. Then submit the job by typing
 
 `sbatch lmp_peierls.batch` 
-
-Note: The CM<sup>3</sup> group members can only use partition cm3atou. If one were to use an OU-wide partition,change the partition name to normal
 
 then hit Return.
 
