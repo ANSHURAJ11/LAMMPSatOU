@@ -110,7 +110,7 @@ Then, in your terminal emulator, type
 
 then hit Return. Then submit the job by typing
 
-`sbatch lmp_gsfe.batch`
+`sbatch lmp_gsfe.batch` Note: The CM3 group members can only use partion cm3atou. If one were to use an OU-wide partition,change the partition name to normal
 
 then hit Return. To check the status of the job, type
 
