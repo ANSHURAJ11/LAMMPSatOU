@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SBATCH --job-name=peierls
-#SBATCH --partition=normal
+#SBATCH --partition=cm3atou
 #SBATCH --output=lmp_peierls.out
 #SBATCH --error=lmp_peierls.err
 #SBATCH --nodes=1
