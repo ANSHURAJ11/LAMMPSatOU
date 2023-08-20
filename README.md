@@ -135,7 +135,8 @@ Now, go back to the file `lmp_gsfe.in` and read it. Look up the meaning of each 
 Note: If you use any file from this section in your published work, please cite
 
    - Shuozhi Xu, Emily Hwang, Wu-Rong Jian, Yanqing Su, Irene J. Beyerlein, [Atomistic                calculations of the generalized stacking fault energies in two refractory multi-principal        element alloys](http://dx.doi.org/10.1016/j.intermet.2020.106844), Intermetallics 124            (2020) 106844
-   - Only the CM<sup>3</sup> group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name to normal
+Note: Only the CM<sup>3</sup> group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name to normal
+
 # OVITO
 In the directory on OSCER, `oscer_gsfe`, you will find a lot of dump files, which contain information of atomic positions. To visualize these files, download them, via Filezilla, to your local computer. Then install [OVITO](http://www.ovito.org/) on your computer. Read [this page](http://www.ovito.org/docs/current/) to learn how to use it.
 # Another example: Calculating the Peierls stress of a screw dislocation in a BCC metal
