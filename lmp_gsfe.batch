@@ -16,7 +16,7 @@ ssh schooner.oscer.ou.edu
 
 #module load intel/18
 module load LAMMPS/11Aug17-gompi-2017b
-/bin/hostname
+#/bin/hostname
 
 # execute lammps
 echo "begin lammps"
