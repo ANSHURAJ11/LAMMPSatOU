@@ -60,7 +60,15 @@ then hit Return.
 
 Note: Type the password anyway even though nothing is showing up.
 
-If you want to check the list of users that are currently running jobs on the cm3atou partition, type the following in your terminal, 
+To check the status of the cm3atou partition, type the following in your terminal,
+
+	sinfo -p cm3atou
+
+To check the list of users that are currently running jobs on the cm3atou partition,
+
+	squeue -p cm3atou
+
+To add the number of cores for each job to the list above,
 
 	squeue -p cm3atou -t all --Format=jobid:10,username:14,statecompact:6,numcpus:6,minmemory:8,timeused:12,timelimit:12,nodelist:8
 
@@ -90,7 +98,7 @@ And here are more references on MD:
   - [Basic Molecular Dynamics](http://li.mit.edu/Archive/Papers/05/Li05-2.8.pdf)
   - [A Molecular Dynamics Primer](http://cms.sjtu.edu.cn/doc/reading/md/A_Molecular_Dynamics_Primer_(Ercolessi).pdf)
   
-To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials).
+To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials.html).
 
 Note: LAMMPS is installed on OSCER, so you don't need to install it yourself.
 
@@ -173,7 +181,7 @@ First, to understand dislocations, I recommend these readings depending on how m
 
 - Advanced-level:
 
-      - Peter M. Anderson, John P. Hirth, Jens Lothe, [Theory of Dislocations](https://www.amazon.com/Theory-Dislocations-Peter-M-Anderson/dp/0521864364), 3rd edition, 2017
+     - Peter M. Anderson, John P. Hirth, Jens Lothe, [Theory of Dislocations](https://www.amazon.com/Theory-Dislocations-Peter-M-Anderson/dp/0521864364), 3rd edition, 2017
       
 Some Google Drive links above are private. You may request access.
 
