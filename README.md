@@ -24,9 +24,11 @@ There, the maximum storage space for the cm3atou group is 18.6 TB. For large fil
 The cm3atou group currently has four nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next scheduled maintenance outage.
 
 ## OU VPN (optional)
+
 Unlike some other universities, you do not need the [OU VPN](https://www.ou.edu/marcomm/cms/get-started/vpn) to connect to OSCER.
 
 ## FTP client
+
 You need a file transfer protocol (FTP) client to transfer data between OSCER and your local computer. Feel free to use any FTP client. Here is a [selected list](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software).
 
 I personally recommend FileZilla. Below is an instruction:
@@ -44,6 +46,7 @@ I personally recommend FileZilla. Below is an instruction:
 5. To transfer files between OSCER and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
   
 ## Terminal emulator
+
 You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel free to use any terminal emulator. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_terminal_emulators).
 
 On Windows, OU recommends [MobaXterm and PuTTY](https://www.ou.edu/oscer/support/machine_access).
@@ -84,6 +87,7 @@ You also need a software package to edit text files on OSCER. Again, feel free t
   - [A quick start guide for vim beginners](https://eastmanreference.com/a-quick-start-guide-for-beginners-to-the-vim-text-editor)
 
 ## LAMMPS
+
 LAMMPS is an open-source software package for atomistic simulations. So you first need to understand how atomistic simulations work. There are three main types of atomistic simulation methods
 
   - [Molecular dynamics (MD)](https://en.wikipedia.org/wiki/Molecular_dynamics)
@@ -102,7 +106,20 @@ To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutori
 
 Note: LAMMPS is installed on OSCER, so you don't need to install it yourself.
 
+However, the version of LAMMPS on OSCER likely does not come with many [packages](https://docs.lammps.org/Packages_list.html). If you need to use certain packages, you may need to [install LAMMPS](https://docs.lammps.org/Install.html) yourself. Before you can compile the LAMMPS code, you need to load a module, i.e.,
+
+	module load OpenMPI/4.1.4-GCC-11.3.0
+
+Note: As a general rule, the `module load XXX` command needs to be typed again each time you log into your OSCER account. To avoid this, write it in both `.bashrc` and `.bash_profile` files in your \$HOME, provided that you are using bash. Then the next time you log in, you don't need to retype `module load XXX`. You can check what modules you have installed by
+
+	module li
+
+and what modules are available on OSCER by
+
+	module av
+
 ## An example: Calculating the GSFE curve in a BCC metal
+
 First, to understand the generalized stacking fault energy (GSFE) curve, read these materials:
 
 - Sections 2 & 3 of: Shuozhi Xu, Yanqing Su, Lauren T.W. Smith, Irene J. Beyerlein, [Frank-Read source operation in six body-centered cubic refractory metals](http://dx.doi.org/10.1016/j.jmps.2020.104017), J. Mech. Phys. Solids 141 (2020) 104017
@@ -161,9 +178,11 @@ Now, go back to the file `lmp_gsfe.in` and read it. Look up the meaning of each 
 Note: Only the cm3atou group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to normal or something else.
 
 ### OVITO
+
 In the directory on OSCER, `oscer_gsfe`, you will find a lot of dump files, which contain information of atomic positions. To visualize these files, download them, via Filezilla, to your local computer. Then install [OVITO](http://www.ovito.org/) on your computer. Read [this page](http://www.ovito.org/docs/current/) to learn how to use it.
 
 ## Another example: Calculating the Peierls stress of a screw dislocation in a BCC metal
+
 First, to understand dislocations, I recommend these readings depending on how much you already know and how much more you want to know.
 
 - Beginner-level:
