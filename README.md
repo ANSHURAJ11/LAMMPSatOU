@@ -110,6 +110,12 @@ However, the version of LAMMPS on OSCER likely does not come with many [packages
 
 	module load OpenMPI/4.1.4-GCC-11.3.0
 
+If you were to use your own LAMMPS executable, modify the mpirun line in the batch file to
+
+	mpirun -np $SLURM_NPROCS /YOURPATH/lmp_mpi -in lmp.in
+	
+where `YOURPATH` is your own path to your newly compiled executable `lmp_mpi`.
+
 Note: As a general rule, the `module load XXX` command needs to be typed again each time you log into your OSCER account. To avoid that, do one of the following:
 
 - Write it in both `.bashrc` and `.bash_profile` files in your \$HOME, provided that you are using bash. Then the next time you log in, you don't need to retype `module load XXX`.
