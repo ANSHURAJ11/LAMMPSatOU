@@ -110,7 +110,12 @@ However, the version of LAMMPS on OSCER likely does not come with many [packages
 
 	module load OpenMPI/4.1.4-GCC-11.3.0
 
-Note: As a general rule, the `module load XXX` command needs to be typed again each time you log into your OSCER account. To avoid this, write it in both `.bashrc` and `.bash_profile` files in your \$HOME, provided that you are using bash. Then the next time you log in, you don't need to retype `module load XXX`. You can check what modules you have installed by
+Note: As a general rule, the `module load XXX` command needs to be typed again each time you log into your OSCER account. To avoid that, do one of the following:
+
+- Write it in both `.bashrc` and `.bash_profile` files in your \$HOME, provided that you are using bash. Then the next time you log in, you don't need to retype `module load XXX`.
+- If you use your own version of LAMMPS, write it in the batch file. Also remember NOT to load the OSCER LAMMPS module, i.e., delete `module load LAMMPS/XXX`.
+
+In any case, you can check what modules you have installed by
 
 	module li
 
