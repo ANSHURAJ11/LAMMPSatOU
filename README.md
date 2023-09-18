@@ -4,7 +4,7 @@ My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl
 
 ## OSCER
 
-First, [request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM<sup>3</sup> lab, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, there is a chance your request will be delayed or even denied.
+First, [request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM<sup>3</sup> lab, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, your request may be delayed or even denied.
 
 Wait for the user account to be approved --- you will receive an email. In what follows, I will assume that your account is `username` and your password is `username-pw`.
   
@@ -19,31 +19,34 @@ Your \$HOME directory has a storage space of 20 GB. If that is exceeded, you won
 
 	/ourdisk/hpc/cm3atou/dont_archive/username/
 
-There, the maximum storage space for the cm3atou group is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, new users can refer to [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
+There, the maximum storage space for the cm3atou group is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
 
 The cm3atou group currently has four nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next scheduled maintenance outage.
 
 ## OU VPN (optional)
+
 Unlike some other universities, you do not need the [OU VPN](https://www.ou.edu/marcomm/cms/get-started/vpn) to connect to OSCER.
 
 ## FTP client
+
 You need a file transfer protocol (FTP) client to transfer data between OSCER and your local computer. Feel free to use any FTP client. Here is a [selected list](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software).
 
 I personally recommend FileZilla. Below is an instruction:
 
-  1. Download and install [Filezilla Client](https://filezilla-project.org/) on your local computer.
-  2. Open it.
-  3. The first time you use it, File --> Site Manager --> New site --> rename it 'OSCER', then        in the window on the right hand side:
-        - Protocol: SFTP - SSH File Transfer Protocol
-        - Host: schooner.oscer.ou.edu
-        - Logon Type: Normal
-        - User: username
-        + Password: username-pw
-        * Connect
-  4. The next time you use it, File --> Site Manager --> select 'OSCER', then 'Connect'.
-  5. To transfer files between OSCER and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
+1. Download and install [Filezilla Client](https://filezilla-project.org/) on your local computer.
+2. Open it.
+3. The first time you use it, File --> Site Manager --> New site --> rename it 'OSCER', then in the window on the right hand side:
+      - Protocol: SFTP - SSH File Transfer Protocol
+      - Host: schooner.oscer.ou.edu
+      - Logon Type: Normal
+      - User: username
+      - Password: username-pw
+      - Connect
+4. The next time you use it, File --> Site Manager --> select 'OSCER', then 'Connect'.
+5. To transfer files between OSCER and your local computer, please refer to [this page](https://wiki.filezilla-project.org/Using).
   
 ## Terminal emulator
+
 You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel free to use any terminal emulator. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_terminal_emulators).
 
 On Windows, OU recommends [MobaXterm and PuTTY](https://www.ou.edu/oscer/support/machine_access).
@@ -60,7 +63,15 @@ then hit Return.
 
 Note: Type the password anyway even though nothing is showing up.
 
-If you want to check the list of users that are currently running jobs on the cm3atou partition, type the following in your terminal, 
+To check the status of the cm3atou partition, type the following in your terminal,
+
+	sinfo -p cm3atou
+
+To check the list of users that are currently running jobs on the cm3atou partition,
+
+	squeue -p cm3atou
+
+To add the number of cores for each job to the list above,
 
 	squeue -p cm3atou -t all --Format=jobid:10,username:14,statecompact:6,numcpus:6,minmemory:8,timeused:12,timelimit:12,nodelist:8
 
@@ -76,6 +87,7 @@ You also need a software package to edit text files on OSCER. Again, feel free t
   - [A quick start guide for vim beginners](https://eastmanreference.com/a-quick-start-guide-for-beginners-to-the-vim-text-editor)
 
 ## LAMMPS
+
 LAMMPS is an open-source software package for atomistic simulations. So you first need to understand how atomistic simulations work. There are three main types of atomistic simulation methods
 
   - [Molecular dynamics (MD)](https://en.wikipedia.org/wiki/Molecular_dynamics)
@@ -90,11 +102,35 @@ And here are more references on MD:
   - [Basic Molecular Dynamics](http://li.mit.edu/Archive/Papers/05/Li05-2.8.pdf)
   - [A Molecular Dynamics Primer](http://cms.sjtu.edu.cn/doc/reading/md/A_Molecular_Dynamics_Primer_(Ercolessi).pdf)
   
-To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials).
+To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials.html).
 
 Note: LAMMPS is installed on OSCER, so you don't need to install it yourself.
 
+However, the version of LAMMPS on OSCER likely does not come with many [packages](https://docs.lammps.org/Packages_list.html). If you need to use certain packages, you may need to [install LAMMPS](https://docs.lammps.org/Install.html) yourself. Before you can compile the LAMMPS code, you need to load a module, i.e.,
+
+	module load OpenMPI/4.1.4-GCC-11.3.0
+
+If you were to use your own LAMMPS executable, modify the mpirun line in the batch file to
+
+	mpirun -np $SLURM_NPROCS /PATH2LMP/lmp_mpi -in lmp.in
+	
+where `PATH2LMP` is your own path to your newly compiled executable `lmp_mpi`.
+
+Note: As a general rule, the `module load XXX` command needs to be typed again each time you log into your OSCER account. To avoid that, do one of the following:
+
+- Write it in both `.bashrc` and `.bash_profile` files in your \$HOME, provided that you are using bash. Then the next time you log in, you don't need to retype `module load XXX`.
+- If you use your own version of LAMMPS, write it in the batch file. Also remember NOT to load the OSCER LAMMPS module, i.e., delete `module load LAMMPS/XXX`.
+
+In any case, you can check what modules you have installed by
+
+	module li
+
+and what modules are available on OSCER by
+
+	module av
+
 ## An example: Calculating the GSFE curve in a BCC metal
+
 First, to understand the generalized stacking fault energy (GSFE) curve, read these materials:
 
 - Sections 2 & 3 of: Shuozhi Xu, Yanqing Su, Lauren T.W. Smith, Irene J. Beyerlein, [Frank-Read source operation in six body-centered cubic refractory metals](http://dx.doi.org/10.1016/j.jmps.2020.104017), J. Mech. Phys. Solids 141 (2020) 104017
@@ -105,7 +141,7 @@ The GSFE curve is just one curve taken from the GSFE surface, also known as the 
 
   - Yanqing Su, Shuozhi Xu, Irene J. Beyerlein, [Density functional theory calculations of generalized stacking fault energy surfaces for eight face-centered cubic transition metals](http://dx.doi.org/10.1063/1.5115282), J. Appl. Phys. 126 (2019) 105112
   
-When you are ready to run simulations, download five files to a local directory local_gsfe on your local computer. The first four files can be downloaded from this GitHub repository, including
+When you are ready to run simulations, download five files to a local directory `local_gsfe` on your local computer. The first four files can be downloaded from this GitHub repository, including
 
    - `lmp_gsfe.batch`, which is for job submission
    - `lmp_gsfe.data`, which is the LAMMPS data file
@@ -116,11 +152,11 @@ The fifth file is
 
    - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded from [this page](https://github.com/wrj2018/Intermetallics_2020)
    
-Then on OSCER, create a new directory in your \$HOME. Say the directory is named oscer_gsfe. The command is
+Then on OSCER, create a new directory in your \$HOME. Say the directory is named `oscer_gsfe`. The command is
 
 `mkdir oscer_gsfe`
 
-Then upload, via Filezilla, the five files from your local computer to oscer_gsfe on OSCER.
+Then upload, via Filezilla, the five files from your local computer to `oscer_gsfe` on OSCER.
 
 Then, in your terminal emulator, type
 
@@ -144,7 +180,7 @@ You will find a lot of files in the directory. One file is called `gsfe_ori`. In
 
 `sh gsfe_curve.sh`
 
-then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the x and y axes of the 'MoNbTiA' curve in Figure 2(a) of [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844). Download `gsfe` to your local computer, plot it, and see if you get the same curve.
+then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the _x_ and _y_ axes of the 'MoNbTi<sub>_A_</sub>' curve in Figure 2(a) of [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844). Download `gsfe` to your local computer, plot it, and see if you get the same curve.
 
 As usual, feel free to use any software to plot the curve. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_information_graphics_software). I recommend Gnuplot. There are many tutorials on Gnuplot, e.g., [this one](https://www.usm.uni-muenchen.de/CAST/talks/gnuplot.pdf).
 
@@ -153,9 +189,11 @@ Now, go back to the file `lmp_gsfe.in` and read it. Look up the meaning of each 
 Note: Only the cm3atou group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to normal or something else.
 
 ### OVITO
+
 In the directory on OSCER, `oscer_gsfe`, you will find a lot of dump files, which contain information of atomic positions. To visualize these files, download them, via Filezilla, to your local computer. Then install [OVITO](http://www.ovito.org/) on your computer. Read [this page](http://www.ovito.org/docs/current/) to learn how to use it.
 
 ## Another example: Calculating the Peierls stress of a screw dislocation in a BCC metal
+
 First, to understand dislocations, I recommend these readings depending on how much you already know and how much more you want to know.
 
 - Beginner-level:
@@ -173,7 +211,7 @@ First, to understand dislocations, I recommend these readings depending on how m
 
 - Advanced-level:
 
-      - Peter M. Anderson, John P. Hirth, Jens Lothe, [Theory of Dislocations](https://www.amazon.com/Theory-Dislocations-Peter-M-Anderson/dp/0521864364), 3rd edition, 2017
+     - Peter M. Anderson, John P. Hirth, Jens Lothe, [Theory of Dislocations](https://www.amazon.com/Theory-Dislocations-Peter-M-Anderson/dp/0521864364), 3rd edition, 2017
       
 Some Google Drive links above are private. You may request access.
 
@@ -182,12 +220,12 @@ To learn all kinds of defects in crystals, read [the website by Föll](https://w
 When you are ready to run simulations, download four files to a local directory `local_peierls` on your local computer. The first three files can be downloaded from this GitHub repository, including
 
    - `lmp_peierls.batch`, which is for job submission
-   - `lmp_peierls.data`, which is the LAMMPS data file, containing a screw dislocation on the         {112} plane
+   - `lmp_peierls.data`, which is the LAMMPS data file, containing a screw dislocation on the {112} plane
    - `lmp_peierls.in`, which is the LAMMPS input file
    
 The fourth file is
 
-   - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded         from [this page](https://github.com/wrj2018/Intermetallics_2020)
+   - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded from [this page](https://github.com/wrj2018/Intermetallics_2020)
    
 Then on OSCER, create a new directory, `oscer_peierls`, in your $HOME, by typing
 
@@ -205,31 +243,39 @@ then hit Return. Then submit the job by typing
 
 then hit Return.
 
-After the job is finished, you will find a new file called `strain-stress`. The first and second columns of this file, respectively, are the yz components of the strain tensor and stress tensor of the simulation cell. The strain is unitless and the stress is in units of MPa. Download `strain-stress` to your local computer, plot it, and you will see a point at which the stress-strain relation starts to deviate from linearity. Let's call it `P1`.
+After the job is finished, you will find a new file called `strain-stress`. The first and second columns of this file, respectively, are the _yz_ components of the strain tensor and stress tensor of the simulation cell. The strain is unitless and the stress is in units of MPa. Download `strain-stress` to your local computer, plot it, and you will see a point at which the stress-strain relation starts to deviate from linearity. Let's call it P1, which corresponds to
 
-To visualize the dislocation core, download dump files to the same directory on your local computer. You do not need to download all of them at once, just selected ones, e.g., dump.0.load, dump.50.load, dump.100.load, ..., dump.500.load. Open any of them in OVITO by File --> Load File --> select the file --> Open. Then, Add modification --> Dislocation analysis (DXA), and change the "input crystal type" to "Body-centered cubic (BCC)". The blue and white atoms, respectively, are in BCC and disordered local structures. The green line is the dislocation line. White atoms exist in three locations: top layer, bottom layer, and center of the simulation cell. Those in the center are atoms in the dislocation core. Select one white atom using the [crosshair button](https://www.ovito.org/docs/current/data_inspector.particles.php).
+	0.000401244438509872 -1172.52533757423
 
-Next, go through all dump files frame by frame in OVITO and pay attention to between which two frames the dislocation core starts to move along the positive x direction. Why is this important? Because when the applied stress surpasses the Peierls stress, the dislocation line should [move from one Peierls valley to another](https://www.tf.uni-kiel.de/matwis/amat/def_en/kap_5/backbone/r5_3_1.html). Therefore, if the dislocation moves between one dump file and the next one, the Peierls stress is between the two stresses associated with these two dump files.
+To visualize the dislocation core, download dump files to the same directory on your local computer. You do not need to download all of them at once, just selected ones, e.g., `dump.0.load`, `dump.50.load`, `dump.100.load`, ..., `dump.500.load`. Open any of them in OVITO by File --> Load File --> select the file --> Open. Then, Add modification --> Dislocation analysis (DXA), and change the "input crystal type" to "Body-centered cubic (BCC)". The blue and white atoms, respectively, are in BCC and disordered local structures. The green line is the dislocation line. White atoms exist in three locations: top layer, bottom layer, and center of the simulation cell. Those in the center are atoms in the dislocation core. Select one white atom using the [crosshair button](https://www.ovito.org/docs/current/data_inspector.particles.php).
+
+Next, go through all dump files frame by frame in OVITO and pay attention to between which two frames the dislocation core starts to move along the positive _x_ direction. Why is this important? Because when the applied stress surpasses the Peierls stress, the dislocation line should [move from one Peierls valley to another](https://www.tf.uni-kiel.de/matwis/amat/def_en/kap_5/backbone/r5_3_1.html). Therefore, if the dislocation moves between one dump file and the next one, the Peierls stress is between the two stresses associated with these two dump files.
 
 How do we determine whether the dislocation moves? Usually one of the two criteria is used: (i) does any white/blue atom become blue/white? (ii) does the green line move by a non-negligible distance? The keyword here is "non-negligible". Regardless of whether the Peierls stress has been reached, the green line may move a little bit between any two frames, especially when the dislocation is an edge dislocation. However, this may be because the entire simulation cell is sheared and so are all atoms within. If, from dump file A to dump file B, the dislocation moves a little bit, and from dump file B to dump file C, the dislocation moves by a longer distance, then likely the Peierls stress is reached somewhere between B and C.
 
-Note: For a screw dislocation, it is important to check whether the dislocation moves within the xz plane. In many cases, the screw dislocation immediately crosses slip to a plane that is not parallel to xz. For more on this topic, read [this paper](https://doi.org/10.1016/j.commatsci.2014.03.064). When this happens, the Peierls stress is not calculable. Write this down and move on to the next calculation. Sometimes the screw dislocation moves within the xz plane by a certain distance, and then crosses slip. In this case, the Peierls stress is considered calculable. Note that an edge dislocation does not cross slip, so its Peierls stress should always be calculable.
+Note: For a screw dislocation, it is important to check whether the dislocation moves within the _xz_ plane. In many cases, the screw dislocation immediately crosses slip to a plane that is not parallel to _xz_. For more on this topic, read [this paper](https://doi.org/10.1016/j.commatsci.2014.03.064). When this happens, the Peierls stress is not calculable. Write this down and move on to the next calculation. Sometimes the screw dislocation moves within the _xz_ plane by a certain distance, and then crosses slip. In this case, the Peierls stress is considered calculable. Note that an edge dislocation does not cross slip, so its Peierls stress should always be calculable.
 
-In the example provided in this GitHub repository, the dislocation moves between dump.350.load and dump.400.load. Then download dump.360.load, dump.370.load, dump.380.load, and dump.390.load from Pod to the same directory (to which all previous dump files were downloaded) on your local computer. Open any dump file again in OVITO, by File --> Load File --> select the file --> Replace selected. Again, go through the newly downloaded dump files frame by frame and identify the two frames between which the dislocation core starts to move. The two frames are dump.390.load and dump.400.load.
+In the example provided in this GitHub repository, the dislocation moves between `dump.350.load` and `dump.400.load`. Then download `dump.360.load`, `dump.370.load`, `dump.380.load`, and `dump.390.load` from Pod to the same directory (to which all previous dump files were downloaded) on your local computer. Open any dump file again in OVITO, by File --> Load File --> select the file --> Replace selected. Again, go through the newly downloaded dump files frame by frame and identify the two frames between which the dislocation core starts to move. The two frames are `dump.390.load` and `dump.400.load`.
 
-Then download dump.391.load, dump.392.load, ..., dump.399.load to the same local directory. Open any dump file, go through these new dump files and identify the two frames between which the dislocation core starts to move. The two frames are dump.393.load and dump.394.load.
+Then download `dump.391.load`, `dump.392.load`, ..., `dump.399.load` to the same local directory. Open any dump file, go through these new dump files and identify the two frames between which the dislocation core starts to move. The two frames are `dump.398.load` and `dump.399.load`.
 
-Then the Peierls stress is the stress of the simulation cell corresponding to dump.393.load. The strain and stress of the simulation cell at this point can be found in line 393 of the file `strain-stress`, and the corresponding stress is then the Peierls stress for the anti-twinning direction on the {112} plane in MoNbTiA, 1174 MPa. In the current case, the critical point associated with the Peierls stress is also `P1` which was identified earlier.
+Then the Peierls stress is the stress of the simulation cell corresponding to `dump.399.load`.
+
+In the file `strain-stress`, the first line corresponds to `dump.0.load`, and so line 400 corresponds to `dump.399.load`, i.e.,
+
+	0.000400240702603493 -1169.50115394567
+
+As a result, the Peierls stress for the anti-twinning direction on the {112} plane is 1169.5 MPa, which is very close to the stress at P1 which was identified earlier.
 
 In a general case, however,
 
-   - The dislocation core may move along the negative x direction, depending on the Burgers vector of the dislocation and the shear direction.
-   - Sometimes there is more than one point on the stress-strain curve at which the stress-strain relation starts to deviate from linearity. Let's say there are three such points and we call them `P1`, `P2`, and `P3`. Then the point at which the dislocation core starts to move may be one of them, or none of them. In other words, do not assume that any of these points is the critical point associated with the Peierls stress. If the point at which the dislocation core starts to move does not correspond to any turning point identified on the stress-strain curve, go with the former point instead of the latter.
+   - The dislocation core may move along the negative _x_ direction, depending on the Burgers vector of the dislocation and the shear direction.
+   - Sometimes there is more than one point on the stress-strain curve at which the stress-strain relation starts to deviate from linearity. Let's say there are three such points and we call them P1, P2, and P3. Then the point at which the dislocation core starts to move may be one of them, or none of them. In other words, do not assume that any of these points is the critical point associated with the Peierls stress. If the point at which the dislocation core starts to move does not correspond to any turning point identified on the stress-strain curve, go with the former point instead of the latter.
 
 ## References
 
 If you use any files from this GitHub repository, please cite
 
-- Shuozhi Xu, Emily Hwang, Wu-Rong Jian, Yanqing Su, Irene J. Beyerlein, [Atomistic calculations of the generalized stacking fault energies in two refractory multi-principal element alloys](http://dx.doi.org/10.1016/j.intermet.2020.106844), Intermetallics 124 (2020) 106844
 - Shuozhi Xu, Yanqing Su, Wu-Rong Jian, Irene J. Beyerlein, [Local slip resistances in equal molar MoNbTi multi-principal element alloy](http://dx.doi.org/10.1016/j.actamat.2020.10.042), Acta Mater. 202 (2021) 68--79
+- Shuozhi Xu, Emily Hwang, Wu-Rong Jian, Yanqing Su, Irene J. Beyerlein, [Atomistic calculations of the generalized stacking fault energies in two refractory multi-principal element alloys](http://dx.doi.org/10.1016/j.intermet.2020.106844), Intermetallics 124 (2020) 106844
 
