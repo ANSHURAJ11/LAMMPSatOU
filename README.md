@@ -21,7 +21,7 @@ Your \$HOME directory has a storage space of 20 GB. If that is exceeded, you won
 
 There, the maximum storage space for the cm3atou group is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
 
-The cm3atou group currently has four nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next scheduled maintenance outage.
+The cm3atou group currently has ten nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next [scheduled maintenance outage](https://www.ou.edu/oscer/maintenance).
 
 ## OU VPN (optional)
 
@@ -100,7 +100,7 @@ And here are more references on MD:
 
   - [Introduction to Molecular Dynamics Simulation](http://2009.igem.org/wiki/images/3/3e/Introduction_to_molecular_Dynamics_Simulation.pdf)
   - [Basic Molecular Dynamics](http://li.mit.edu/Archive/Papers/05/Li05-2.8.pdf)
-  - [A Molecular Dynamics Primer](http://cms.sjtu.edu.cn/doc/reading/md/A_Molecular_Dynamics_Primer_(Ercolessi).pdf)
+  - [A Molecular Dynamics Primer](https://web.mst.edu/vojtat/class_5403/ercolessi.pdf)
   
 To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials.html).
 

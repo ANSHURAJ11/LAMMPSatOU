@@ -5,7 +5,7 @@
 #SBATCH --output=lmp_peierls.out
 #SBATCH --error=lmp_peierls.err
 #SBATCH --nodes=1
-#SBATCH --ntasks=16
+#SBATCH --ntasks=1
 #SBATCH --time=12:00:00
 #SBATCH --mail-user=youremailaddress@yourinstitution.edu
 #SBATCH --mail-type=ALL
