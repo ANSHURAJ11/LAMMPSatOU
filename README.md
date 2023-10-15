@@ -1,6 +1,6 @@
 ## Introduction
 
-My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu/). In this respository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the permission of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
+My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu/). In this respository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the help of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
 
 ## OSCER
 
@@ -199,7 +199,7 @@ As usual, feel free to use any software to plot the curve. Here is a [selected l
 
 Now, go back to the file `lmp_gsfe.in` and read it. Look up the meaning of each LAMMPS command on [this page](https://lammps.sandia.gov/doc/Commands_all.html).
      
-Note: Only the cm3atou group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to normal or something else.
+Note: Only the cm3atou group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to [something else](https://www.ou.edu/oscer/support/partitions).
 
 ### OVITO
 
