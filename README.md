@@ -1,6 +1,6 @@
 ## Introduction
 
-My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu/). In this respository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the permission of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
+My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu/). In this respository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the help of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
 
 ## OSCER
 
@@ -74,6 +74,20 @@ To check the list of users that are currently running jobs on the cm3atou partit
 To add the number of cores for each job to the list above,
 
 	squeue -p cm3atou -t all --Format=jobid:10,username:14,statecompact:6,numcpus:6,minmemory:8,timeused:12,timelimit:12,nodelist:8
+
+To check the status of all jobs of yours that are either running or pending,
+
+	squeue -u username
+
+Then the first column is the JOBID.
+
+To cancel a running job,
+
+	scancel JOBID
+	
+To find out more about a running job, including the direcotry where you submitted it,
+
+	scontrol show job JOBID
 
 If you are not familiar with Linux, please refer to these webpages:
 
@@ -173,7 +187,6 @@ then hit Return. To check the status of the job, type
 then hit Return. You will see two lines. In the first line, there is a term `ST`, which stands for 'status'. If, at the same location of the second line, you see `PD`, the job is pending. Recheck the status later. If you see `R`, the job is running. If you only see one line, the job is finished. This, however, can mean one of the two things:
 
   - The job was finished because of an error. In this case, check these three files: `lmp_gsfe.out`, `lmp_gsfe.err`, and `log.lammps`. They provide you information on what caused the error(s). In particular, the last file is the log file of LAMMPS, which would present an error message in the last line. Please refer to [this page](https://lammps.sandia.gov/doc/Errors_messages.html) for the explanation of each error               message. Once you figure out what went wrong, fix the problem, and resubmit the job
-  
   - The job was finished successfully. In this case, the file `lmp_gsfe.err` is empty. Proceed to the next step.
   
 You will find a lot of files in the directory. One file is called `gsfe_ori`. In the same directory on OSCER, type
@@ -186,7 +199,7 @@ As usual, feel free to use any software to plot the curve. Here is a [selected l
 
 Now, go back to the file `lmp_gsfe.in` and read it. Look up the meaning of each LAMMPS command on [this page](https://lammps.sandia.gov/doc/Commands_all.html).
      
-Note: Only the cm3atou group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to normal or something else.
+Note: Only the cm3atou group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to [something else](https://www.ou.edu/oscer/support/partitions).
 
 ### OVITO
 
