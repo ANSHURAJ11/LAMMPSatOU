@@ -53,11 +53,11 @@ On Windows, OU recommends [MobaXterm and PuTTY](https://www.ou.edu/oscer/support
 
 On Mac and Linux, without installing any new emulator, you may open the default terminal and type
 
-`ssh username@schooner.oscer.ou.edu`
+	ssh username@schooner.oscer.ou.edu
 
 then hit Return. Then you will be asked to provide your password. Type your own password, e.g.,
 
-`username-pw`
+	username-pw
 
 then hit Return.
 
