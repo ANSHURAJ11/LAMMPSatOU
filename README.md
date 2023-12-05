@@ -15,7 +15,7 @@ To use OSCER, these webpages may help:
    - [SLURM](https://slurm.schedmd.com/quickstart.html)
    - [SLURM at OU](https://www.ou.edu/oscer/support/running_jobs_schooner)
 
-Your \$HOME directory has a data quota of 20 GB. To check how much space you have taken, execute the following command in \$HOME:
+Usually, your \$HOME directory has a data quota of 20 GB. But each cm3atou group member has a larger quota of 30 GB. To check how much space you have taken, execute the following command in \$HOME:
 
 	du -sh
 
