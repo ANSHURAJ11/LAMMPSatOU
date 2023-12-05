@@ -15,11 +15,25 @@ To use OSCER, these webpages may help:
    - [SLURM](https://slurm.schedmd.com/quickstart.html)
    - [SLURM at OU](https://www.ou.edu/oscer/support/running_jobs_schooner)
 
-Your \$HOME directory has a storage space of 20 GB. If that is exceeded, you won't be able to write anything to \$HOME, and most likely all your jobs will stop. In that case, members in the cm3atou group should move files to
+Usually, your \$HOME directory has a data quota of 20 GB. But each cm3atou group member has a larger quota of 30 GB. To check how much space you have taken, execute the following command in \$HOME:
+
+	du -sh
+
+If the quota is exceeded, you won't be able to write anything to \$HOME, and most likely all your jobs will stop. In that case, you can take advantage of the directory `/scratch/username/`, where files are automatically deleted after 2 weeks. Note that `/scratch` is a common space where everyone on OSCER can use it, until it is full. One may check his/her usage of the scratch partition by
+
+	df /scratch/username/
+
+There are three ways to use `/scratch/username/`:
+
+- Submit jobs in \$HOME and output data there. Then move some or all data to `/scratch/username/`;
+- Submit jobs in `/scratch/username/` directly;
+- Add `#SBATCH --chdir=/scratch/username/` in the `*.batch` file, and then all output data will be written to that directory.
+
+In addition, members in the cm3atou group can also move files to
 
 	/ourdisk/hpc/cm3atou/dont_archive/username/
 
-There, the maximum storage space for the cm3atou group is 18.6 TB. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
+where the maximum storage space for the cm3atou group is 18.6 TB. Unlike in `/scratch`, files in `/ourdisk` won't be deleted. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
 
 The cm3atou group currently has ten nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next [scheduled maintenance outage](https://www.ou.edu/oscer/maintenance).
 
@@ -53,15 +67,15 @@ On Windows, OU recommends [MobaXterm and PuTTY](https://www.ou.edu/oscer/support
 
 On Mac and Linux, without installing any new emulator, you may open the default terminal and type
 
-`ssh username@schooner.oscer.ou.edu`
+	ssh username@schooner.oscer.ou.edu
 
 then hit Return. Then you will be asked to provide your password. Type your own password, e.g.,
 
-`username-pw`
+	username-pw
 
 then hit Return.
 
-Note: Type the password anyway even though nothing is showing up.
+Hint: Type the password anyway even though nothing is showing up.
 
 To check the status of the cm3atou partition, type the following in your terminal,
 
