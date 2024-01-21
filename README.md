@@ -168,8 +168,8 @@ First, to understand the generalized stacking fault energy (GSFE) curve, read th
 The GSFE curve is just one curve taken from the GSFE surface, also known as the γ-surface, which is usually calculated in FCC metals. To know more about the GSFE surface, please read
 
   - Yanqing Su, Shuozhi Xu, Irene J. Beyerlein, [Density functional theory calculations of generalized stacking fault energy surfaces for eight face-centered cubic transition metals](http://dx.doi.org/10.1063/1.5115282), J. Appl. Phys. 126 (2019) 105112
-  
-When you are ready to run simulations, download five files to a local directory `local_gsfe` on your local computer. The first four files can be downloaded from this GitHub repository, including
+
+When you are ready to run simulations, visit [this page](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives) to learn how to download files from a GitHub repository. Then download five files to a local directory `local_gsfe` on your local computer. The first four files can be found in the `gsfe` directory in this GitHub repository, including
 
    - `lmp_gsfe.batch`, which is for job submission
    - `lmp_gsfe.data`, which is the LAMMPS data file
@@ -244,7 +244,7 @@ Some Google Drive links above are private. You may request access.
 
 To learn all kinds of defects in crystals, read [the website by Föll](https://www.tf.uni-kiel.de/matwis/amat/def_en/index.html) and/or [the book by Cai and Nix](https://www.cambridge.org/highereducation/books/imperfections-in-crystalline-solids/3A193C8DEF36073F9E2EF07EEA6A5D96#overview).
 
-When you are ready to run simulations, download four files to a local directory `local_peierls` on your local computer. The first three files can be downloaded from this GitHub repository, including
+When you are ready to run simulations, download four files to a local directory `local_peierls` on your local computer. The first three files can be found in the `peierls` directory in this GitHub repository, including
 
    - `lmp_peierls.batch`, which is for job submission
    - `lmp_peierls.data`, which is the LAMMPS data file, containing a screw dislocation on the {112} plane
