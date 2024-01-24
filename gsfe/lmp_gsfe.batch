@@ -3,7 +3,7 @@
 #SBATCH --job-name=gsfe
 #SBATCH --partition=cm3atou
 #SBATCH --nodes=1
-#SBATCH --ntasks=16
+#SBATCH --ntasks=4
 #SBATCH --output=lmp_gsfe.out
 #SBATCH --error=lmp_gsfe.err
 #SBATCH --time=12:00:00
