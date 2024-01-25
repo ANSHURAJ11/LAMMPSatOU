@@ -1,6 +1,6 @@
 ## Introduction
 
-My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu/). In this respository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the help of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
+My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu/). In this repository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the help of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
 
 ## OSCER
 
@@ -156,6 +156,10 @@ In any case, you can check what modules you have installed by
 and what modules are available on OSCER by
 
 	module av
+	
+If you only want to know about a specific software package, e.g., LAMMPS, type
+
+	module spider lammps
 
 ## An example: Calculating the GSFE curve in a BCC metal
 
@@ -169,7 +173,7 @@ The GSFE curve is just one curve taken from the GSFE surface, also known as the 
 
   - Yanqing Su, Shuozhi Xu, Irene J. Beyerlein, [Density functional theory calculations of generalized stacking fault energy surfaces for eight face-centered cubic transition metals](http://dx.doi.org/10.1063/1.5115282), J. Appl. Phys. 126 (2019) 105112
 
-When you are ready to run simulations, visit [this page](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives) to learn how to download files from a GitHub repository. Then download five files to a local directory `local_gsfe` on your local computer. The first four files can be found in the `gsfe` directory in this GitHub repository, including
+Running this specific LAMMPS simulation requires five files. The first four files can be found in the `gsfe` directory in this GitHub repository, including
 
    - `lmp_gsfe.batch`, which is for job submission
    - `lmp_gsfe.data`, which is the LAMMPS data file
@@ -179,6 +183,8 @@ When you are ready to run simulations, visit [this page](https://docs.github.com
 The fifth file is
 
    - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded from [this page](https://github.com/wrj2018/Intermetallics_2020)
+
+First, [download all five files from GitHub](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives) to your local computer.
    
 Then on OSCER, create a new directory in your \$HOME. Say the directory is named `oscer_gsfe`. The command is
 
@@ -200,16 +206,16 @@ then hit Return. To check the status of the job, type
 
 then hit Return. You will see two lines. In the first line, there is a term `ST`, which stands for 'status'. If, at the same location of the second line, you see `PD`, the job is pending. Recheck the status later. If you see `R`, the job is running. If you only see one line, the job is finished. This, however, can mean one of the two things:
 
-  - The job was finished because of an error. In this case, check these three files: `lmp_gsfe.out`, `lmp_gsfe.err`, and `log.lammps`. They provide you information on what caused the error(s). In particular, the last file is the log file of LAMMPS, which would present an error message in the last line. Please refer to [this page](https://lammps.sandia.gov/doc/Errors_messages.html) for the explanation of each error               message. Once you figure out what went wrong, fix the problem, and resubmit the job
+  - The job was finished because of an error. In this case, check these three files: `lmp_gsfe.out`, `lmp_gsfe.err`, and `log.lammps`. They provide you information on what caused the error(s). In particular, the last file is the log file of LAMMPS, which would present an error message in the last line. Please refer to [this page](https://lammps.sandia.gov/doc/Errors_messages.html) for the explanation of each error message. Once you figure out what went wrong, fix the problem, and resubmit the job
   - The job was finished successfully. In this case, the file `lmp_gsfe.err` is empty. Proceed to the next step.
   
 You will find a lot of files in the directory. One file is called `gsfe_ori`. In the same directory on OSCER, type
 
 `sh gsfe_curve.sh`
 
-then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the _x_ and _y_ axes of the 'MoNbTi<sub>_A_</sub>' curve in Figure 2(a) of [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844). Download `gsfe` to your local computer, plot it, and see if you get the same curve.
+then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the _x_ and _y_ axes of the 'MoNbTi<sub>_A_</sub>' curve in Figure 2(a) of [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844). Use Filezilla to download `gsfe` to your local computer, plot it, and see if you get the same curve.
 
-As usual, feel free to use any software to plot the curve. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_information_graphics_software). I recommend Gnuplot. There are many tutorials on Gnuplot, e.g., [this one](https://www.usm.uni-muenchen.de/CAST/talks/gnuplot.pdf).
+As usual, feel free to use any software to plot the curve. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_information_graphics_software). I recommend [Matplotlib](https://matplotlib.org).
 
 Now, go back to the file `lmp_gsfe.in` and read it. Look up the meaning of each LAMMPS command on [this page](https://lammps.sandia.gov/doc/Commands_all.html).
      
@@ -244,7 +250,7 @@ Some Google Drive links above are private. You may request access.
 
 To learn all kinds of defects in crystals, read [the website by Föll](https://www.tf.uni-kiel.de/matwis/amat/def_en/index.html) and/or [the book by Cai and Nix](https://www.cambridge.org/highereducation/books/imperfections-in-crystalline-solids/3A193C8DEF36073F9E2EF07EEA6A5D96#overview).
 
-When you are ready to run simulations, download four files to a local directory `local_peierls` on your local computer. The first three files can be found in the `peierls` directory in this GitHub repository, including
+Running this specific LAMMPS simulation requires four files. The first three files can be found in the `peierls` directory in this GitHub repository, including
 
    - `lmp_peierls.batch`, which is for job submission
    - `lmp_peierls.data`, which is the LAMMPS data file, containing a screw dislocation on the {112} plane
@@ -253,6 +259,8 @@ When you are ready to run simulations, download four files to a local directory 
 The fourth file is
 
    - `MoNbTi_A_atom.eam.alloy`, which is the interatomic potential file and can be downloaded from [this page](https://github.com/wrj2018/Intermetallics_2020)
+
+Make sure that you have all four files in your local computer, which you should after you tried the first example.
    
 Then on OSCER, create a new directory, `oscer_peierls`, in your $HOME, by typing
 
@@ -276,13 +284,15 @@ After the job is finished, you will find a new file called `strain-stress`. The 
 
 To visualize the dislocation core, download dump files to the same directory on your local computer. You do not need to download all of them at once, just selected ones, e.g., `dump.0.load`, `dump.50.load`, `dump.100.load`, ..., `dump.500.load`. Open any of them in OVITO by File --> Load File --> select the file --> Open. Then, Add modification --> Dislocation analysis (DXA), and change the "input crystal type" to "Body-centered cubic (BCC)". The blue and white atoms, respectively, are in BCC and disordered local structures. The green line is the dislocation line. White atoms exist in three locations: top layer, bottom layer, and center of the simulation cell. Those in the center are atoms in the dislocation core. Select one white atom using the [crosshair button](https://www.ovito.org/docs/current/data_inspector.particles.php).
 
+Say that you chose to open the file `dump.0.load`, now please click on  `dump.0.load [LAMMPS Dump]` in the `Data Source` section on the right panel. Then in the `External file` section below, check the box before `auto-generate` below `Search pattern:`, you should see `Found X matching files`, where `X` is the number of dump files you just downloaded.  
+
 Next, go through all dump files frame by frame in OVITO and pay attention to between which two frames the dislocation core starts to move along the positive _x_ direction. Why is this important? Because when the applied stress surpasses the Peierls stress, the dislocation line should [move from one Peierls valley to another](https://www.tf.uni-kiel.de/matwis/amat/def_en/kap_5/backbone/r5_3_1.html). Therefore, if the dislocation moves between one dump file and the next one, the Peierls stress is between the two stresses associated with these two dump files.
 
 How do we determine whether the dislocation moves? Usually one of the two criteria is used: (i) does any white/blue atom become blue/white? (ii) does the green line move by a non-negligible distance? The keyword here is "non-negligible". Regardless of whether the Peierls stress has been reached, the green line may move a little bit between any two frames, especially when the dislocation is an edge dislocation. However, this may be because the entire simulation cell is sheared and so are all atoms within. If, from dump file A to dump file B, the dislocation moves a little bit, and from dump file B to dump file C, the dislocation moves by a longer distance, then likely the Peierls stress is reached somewhere between B and C.
 
 Note: For a screw dislocation, it is important to check whether the dislocation moves within the _xz_ plane. In many cases, the screw dislocation immediately crosses slip to a plane that is not parallel to _xz_. For more on this topic, read [this paper](https://doi.org/10.1016/j.commatsci.2014.03.064). When this happens, the Peierls stress is not calculable. Write this down and move on to the next calculation. Sometimes the screw dislocation moves within the _xz_ plane by a certain distance, and then crosses slip. In this case, the Peierls stress is considered calculable. Note that an edge dislocation does not cross slip, so its Peierls stress should always be calculable.
 
-In the example provided in this GitHub repository, the dislocation moves between `dump.350.load` and `dump.400.load`. Then download `dump.360.load`, `dump.370.load`, `dump.380.load`, and `dump.390.load` from Pod to the same directory (to which all previous dump files were downloaded) on your local computer. Open any dump file again in OVITO, by File --> Load File --> select the file --> Replace selected. Again, go through the newly downloaded dump files frame by frame and identify the two frames between which the dislocation core starts to move. The two frames are `dump.390.load` and `dump.400.load`.
+In the example provided in this GitHub repository, the dislocation moves between `dump.350.load` and `dump.400.load`. Then download `dump.360.load`, `dump.370.load`, `dump.380.load`, and `dump.390.load` from OSCER to the same directory (to which all previous dump files were downloaded) on your local computer. Open any dump file again in OVITO, by File --> Load File --> select the file --> Replace selected. Again, go through the newly downloaded dump files frame by frame and identify the two frames between which the dislocation core starts to move. The two frames are `dump.390.load` and `dump.400.load`.
 
 Then download `dump.391.load`, `dump.392.load`, ..., `dump.399.load` to the same local directory. Open any dump file, go through these new dump files and identify the two frames between which the dislocation core starts to move. The two frames are `dump.398.load` and `dump.399.load`.
 
