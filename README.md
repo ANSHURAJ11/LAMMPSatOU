@@ -4,7 +4,7 @@ My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl
 
 ## OSCER
 
-First, [request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM<sup>3</sup> lab, specify “cm3atou” as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, your request may be delayed or even denied.
+First, [request a user account](https://www.ou.edu/oscer/support/accounts/new_account) at OSCER. While requesting for an OSCER account, one needs to specify his/her group name. If you are a member of the CM<sup>3</sup> lab, specify `cm3atou` as your group name. For all other new users, use your own group name. If you use an incorrect group name in your request, your request may be delayed or even denied.
 
 Wait for the user account to be approved --- you will receive an email. In what follows, I will assume that your account is `username` and your password is `username-pw`.
   
@@ -102,6 +102,10 @@ To cancel a running job,
 To find out more about a running job, including the direcotry where you submitted it,
 
 	scontrol show job JOBID
+	
+To find out the specification of a node,
+
+	scontrol show nodes NODEID
 
 If you are not familiar with Linux, please refer to these webpages:
 
@@ -204,10 +208,14 @@ then hit Return. To check the status of the job, type
 
 `squeue -u username`
 
-then hit Return. You will see two lines. In the first line, there is a term `ST`, which stands for 'status'. If, at the same location of the second line, you see `PD`, the job is pending. Recheck the status later. If you see `R`, the job is running. If you only see one line, the job is finished. This, however, can mean one of the two things:
+then hit Return. You will see two lines. In the first line, there is a term `ST`, which stands for 'status'. If, at the same location of the second line, you see `PD`, the job is pending. Recheck the status later. If you see `R`, the job is running.
+
+Once the job starts running, feel free to disconnect from OSCER or turn off your local computer. Your job will continuum running on OSCER until it is finished by itself or you cancel it using `scancel JOBID`.
+
+If you only see one line following `squeue -u username`, the job is finished. This, however, can mean one of the two things:
 
   - The job was finished because of an error. In this case, check these three files: `lmp_gsfe.out`, `lmp_gsfe.err`, and `log.lammps`. They provide you information on what caused the error(s). In particular, the last file is the log file of LAMMPS, which would present an error message in the last line. Please refer to [this page](https://lammps.sandia.gov/doc/Errors_messages.html) for the explanation of each error message. Once you figure out what went wrong, fix the problem, and resubmit the job
-  - The job was finished successfully. In this case, the file `lmp_gsfe.err` is empty. Proceed to the next step.
+  - The job was finished successfully. In this case, the last line of the log file should contain `Total wall time`. Then proceed to the next step.
   
 You will find a lot of files in the directory. One file is called `gsfe_ori`. In the same directory on OSCER, type
 
