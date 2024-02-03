@@ -24,6 +24,8 @@ module load LAMMPS/11Aug17-gompi-2017b
 echo "begin lammps"
 echo "the job is ${SLURM_JOB_ID}"
 
+rm -f gsfe gsfe_ori
+
 mpirun -np $SLURM_NPROCS lmp_schooner -in lmp_gsfe.in
 
 echo "lammps out"

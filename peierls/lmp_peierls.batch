@@ -22,6 +22,8 @@ module load LAMMPS/11Aug17-gompi-2017b
 echo "begin lammps"
 echo "the job is ${SLURM_JOB_ID}"
 
+rm -f strain-stress dump.*
+
 mpirun -np $SLURM_NPROCS lmp_schooner -in lmp_peierls.in
 
 echo "lammps out"
