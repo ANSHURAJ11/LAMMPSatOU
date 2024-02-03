@@ -210,7 +210,7 @@ then hit Return. To check the status of the job, type
 
 then hit Return. You will see two lines. In the first line, there is a term `ST`, which stands for 'status'. If, at the same location of the second line, you see `PD`, the job is pending. Recheck the status later. If you see `R`, the job is running.
 
-Once the job starts running, feel free to disconnect from OSCER or turn off your local computer. Your job will continuum running on OSCER until it is finished by itself or you cancel it using `scancel JOBID`.
+Once the job starts running, feel free to disconnect from OSCER or turn off your local computer. Your job will continue running on OSCER until it is finished by itself or you cancel it using `scancel JOBID`.
 
 If you only see one line following `squeue -u username`, the job is finished. This, however, can mean one of the two things:
 
