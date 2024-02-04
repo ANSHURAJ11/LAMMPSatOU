@@ -47,7 +47,7 @@ variable        latparam equal 3.225
 
 variable        area equal lx*lz
 
-variable        disp equal (${latparam}*sqrt(3))/${stepn}
+variable        disp equal (${latparam}*sqrt(3)/2)/${stepn}
 
 displace_atoms  bot move 0 0 -${disp} units box
 

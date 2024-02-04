@@ -165,7 +165,7 @@ If you only want to know about a specific software package, e.g., LAMMPS, type
 
 	module spider lammps
 
-## An example: Calculating the GSFE curve in a BCC metal
+## Example 1: Calculating the GSFE curve in a BCC metal
 
 First, to understand the generalized stacking fault energy (GSFE) curve, read these materials:
 
@@ -221,7 +221,7 @@ You will find a lot of files in the directory. One file is called `gsfe_ori`. In
 
 `sh gsfe_curve.sh`
 
-then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the _x_ and _y_ axes of the 'MoNbTi<sub>_A_</sub>' curve in Figure 2(a) of [this paper](http://dx.doi.org/10.1016/j.intermet.2020.106844). Use Filezilla to download `gsfe` to your local computer, plot it, and see if you get the same curve.
+then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the _x_ and _y_ axes of the first half of the 'MoNbTi<sub>_A_</sub>' curve in Figure 2(a) of [this paper](https://shuozhixu.github.io/publications/mpea/xu_bcc.mpea.gsfe_intermetallics.2020.pdf). Use Filezilla to download `gsfe` to your local computer, plot it, and see if you get the same curve.
 
 As usual, feel free to use any software to plot the curve. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_information_graphics_software). I recommend [Matplotlib](https://matplotlib.org).
 
@@ -233,7 +233,7 @@ Note: Only the cm3atou group members can use the partition cm3atou in the batch 
 
 In the directory on OSCER, `oscer_gsfe`, you will find a lot of dump files, which contain information of atomic positions. To visualize these files, download them, via Filezilla, to your local computer. Then install [OVITO](http://www.ovito.org/) on your computer. Read [this page](http://www.ovito.org/docs/current/) to learn how to use it.
 
-## Another example: Calculating the Peierls stress of a screw dislocation in a BCC metal
+## Example 2: Calculating the Peierls stress of a screw dislocation in a BCC metal
 
 First, to understand dislocations, I recommend these readings depending on how much you already know and how much more you want to know.
 
