@@ -3,7 +3,7 @@
 #SBATCH --job-name=gsfe
 #SBATCH --partition=cm3atou
 #SBATCH --nodes=1
-#SBATCH --ntasks=4
+#SBATCH --ntasks-per-node=4
 #SBATCH --output=lmp_gsfe.out
 #SBATCH --error=lmp_gsfe.err
 #SBATCH --time=12:00:00
@@ -26,7 +26,7 @@ echo "the job is ${SLURM_JOB_ID}"
 
 rm -f gsfe gsfe_ori
 
-mpirun -np $SLURM_NPROCS lmp_schooner -in lmp_gsfe.in
+mpirun lmp_schooner -in lmp_gsfe.in
 
 echo "lammps out"
 
