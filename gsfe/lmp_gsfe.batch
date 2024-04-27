@@ -16,9 +16,7 @@
 
 cd ${SLURM_SUBMIT_DIR}
 
-#module load intel/18
-module load LAMMPS/11Aug17-gompi-2017b
-#/bin/hostname
+module load intel/2022a
 
 # execute lammps
 echo "begin lammps"
@@ -26,7 +24,7 @@ echo "the job is ${SLURM_JOB_ID}"
 
 rm -f gsfe gsfe_ori
 
-mpirun lmp_schooner -in lmp_gsfe.in
+mpirun ~/software/lammps-cms/src/lmp_mpi -in lmp_gsfe.in
 
 echo "lammps out"
 
