@@ -43,20 +43,23 @@ Many softare programs are already installed on OSCER. You can check what modules
 
 	module av
 	
+If you want to know about a specific software program, e.g., LAMMPS, type
+
+	module av lammps
+
+or
+
+	module spider lammps
+	
 To load a specific program so that you can use it, type
 
 	module load XXX
 	
-where `XXX` is the program name as shown by `module av`. To check what modules you have installed, type
+where `XXX` is the program name as shown by `module av` or `module spider`. To check what modules you have installed, type
 
 	module li
-	
-If you only want to know about a specific software package, e.g., LAMMPS, type
 
-	module spider lammps
-
-Note: As a general rule, the `module load XXX` command needs to be typed again each time you log into your OSCER account. To avoid that, write it in both `.bashrc` and `.bash_profile` files in your \$HOME, provided that you are using bash. Then the next time you log in, you don't need to retype `module load XXX`.
-
+Note: As a general rule, the `module load XXX` command needs to be typed each time you log into your OSCER account. To avoid that, write it in both `.bashrc` and `.bash_profile` files in your \$HOME, provided that you are using bash. Then the next time you log in, you don't need to retype `module load XXX`.
 
 ## OU VPN (optional)
 
@@ -157,7 +160,7 @@ And here are more references on MD:
   
 To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials.html).
 
-Multiple versions of LAMMPS are installed on OSCER. However, we prefer to install the latest version ourselves. To do that, download the file  `lmp_cms.sh` from this GitHub repository to your local computer, then upload it, via Filezilla, to \$HOME on OSCER. Then in your terminal emulator, cd to \$HOME, and execute
+Multiple versions of LAMMPS are installed on OSCER (try `module spider lammps` as mentioned earlier). However, we prefer to install the latest version ourselves. To do that, download the file  `lmp_cms.sh` from this GitHub repository to your local computer, then upload it, via Filezilla, to your \$HOME on OSCER. Then in your terminal emulator, cd to \$HOME, and execute
 
 	sh lmp_cms.sh
 
@@ -165,7 +168,7 @@ Note that the fourth command in `lmp_cms.sh` loads a module. If you cannot load 
 
 Once the `sh` run is finished, you will find a file `lmp_mpi` in the `software/lammps-cms/src/` directory on OSCER. And that is the LAMMPS executable with MANYBODY, EXTRA-COMPUTE, MC, and MISC packages.
 
-If you need additional [packages](https://docs.lammps.org/Packages_list.html), you will need to add them yourself.
+If you need additional [packages](https://docs.lammps.org/Packages_list.html), you can add them yourself by editing the file `lmp_cms.sh`, i.e., adding more `mpi yes-XXX` before `make mpi` .
 
 ## Example 1: Calculating the GSFE curve in a BCC metal
 
