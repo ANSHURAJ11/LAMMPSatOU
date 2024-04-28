@@ -14,8 +14,7 @@
 
 cd ${SLURM_SUBMIT_DIR}
 
-#module load intel/18
-module load LAMMPS/11Aug17-gompi-2017b
+module load intel/2022a
 #/bin/hostname
 
 # execute lammps
@@ -24,6 +23,6 @@ echo "the job is ${SLURM_JOB_ID}"
 
 rm -f strain-stress dump.*
 
-mpirun lmp_schooner -in lmp_peierls.in
+mpirun ~/software/lammps-cms/src/lmp_mpi -in lmp_peierls.in
 
 echo "lammps out"
