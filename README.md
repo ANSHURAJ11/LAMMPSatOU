@@ -160,7 +160,9 @@ And here are more references on MD:
   
 To learn LAMMPS, you may start with [this page](https://lammps.sandia.gov/tutorials.html) and [this page](https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_tutorials.html).
 
-Multiple versions of LAMMPS are installed on OSCER (try `module spider lammps` as mentioned earlier). However, we prefer to install the latest version ourselves. To do that, download the file  `lmp_cms.sh` from this GitHub repository to your local computer, then upload it, via Filezilla, to your \$HOME on OSCER. Then in your terminal emulator, cd to \$HOME, and execute
+Multiple versions of LAMMPS are installed on OSCER (try `module spider lammps` as mentioned earlier). However, there are cases where we prefer to install LAMMPS ourselves for two reasons: (i) to access the latest features and updates implemented in the software and (ii) to utilize additional [packages](https://docs.lammps.org/Packages_list.html). The second reason is particularly important when running the two examples provided in this GitHub repository.
+
+To do that, download the file  `lmp_cms.sh` from this GitHub repository to your local computer, then upload it, via Filezilla, to your \$HOME on OSCER. Then in your terminal emulator, cd to \$HOME, and execute
 
 	sh lmp_cms.sh
 
