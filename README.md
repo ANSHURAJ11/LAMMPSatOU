@@ -228,7 +228,7 @@ You will find a lot of files in the directory. One file is called `gsfe_ori`. In
 
 `sh gsfe_curve.sh`
 
-then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the _x_ and _y_ axes of the first half of the 'MoNbTi<sub>_A_</sub>' curve in Figure 2(a) of [this paper](https://shuozhixu.github.io/publications/mpea/xu_bcc.mpea.gsfe_intermetallics.2020.pdf). Use Filezilla to download `gsfe` to your local computer, plot it, and see if you get the same curve.
+then hit Return. You will find a new file called `gsfe`. The first and second columns of this file, respectively, are the _x_ and _y_ axes of the first half of the 'MoNbTi<sub>_A_</sub>' curve in Figure 2(a) of [this paper](https://shuozhixu.github.io/publications/mpe/xu_bcc.mpea.gsfe_intermetallics.2020.pdf). Use Filezilla to download `gsfe` to your local computer, plot it, and see if you get the same curve.
 
 As usual, feel free to use any software to plot the curve. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_information_graphics_software). I recommend [Matplotlib](https://matplotlib.org).
 
