@@ -295,7 +295,7 @@ then hit Return.
 
 After the job is finished, you will find a new file called `strain-stress`. The first and second columns of this file, respectively, are the _yz_ components of the strain tensor and stress tensor of the simulation cell. The strain is unitless and the stress is in units of MPa. Download `strain-stress` to your local computer, plot it, and you will see a point at which the stress-strain relation starts to deviate from linearity. Let's call it P1, which corresponds to
 
-	0.000401244438509872 -1172.52533757423
+	0.00039301251139435 -1173.58509315507
 
 To visualize the dislocation core, download dump files to the same directory on your local computer. You do not need to download all of them at once, just selected ones, e.g., `dump.0.load`, `dump.50.load`, `dump.100.load`, ..., `dump.500.load`. Open any of them in OVITO by File --> Load File --> select the file --> Open. Then, Add modification --> Dislocation analysis (DXA), and change the "input crystal type" to "Body-centered cubic (BCC)". The blue and white atoms, respectively, are in BCC and disordered local structures. The green line is the dislocation line. White atoms exist in three locations: top layer, bottom layer, and center of the simulation cell. Those in the center are atoms in the dislocation core. Select one white atom using the [crosshair button](https://www.ovito.org/docs/current/data_inspector.particles.php).
 
@@ -309,15 +309,15 @@ Note: For a screw dislocation, it is important to check whether the dislocation 
 
 In the example provided in this GitHub repository, the dislocation moves between `dump.350.load` and `dump.400.load`. Then download `dump.360.load`, `dump.370.load`, `dump.380.load`, and `dump.390.load` from OSCER to the same directory (to which all previous dump files were downloaded) on your local computer. Open any dump file again in OVITO, by File --> Load File --> select the file --> Replace selected. Again, go through the newly downloaded dump files frame by frame and identify the two frames between which the dislocation core starts to move. The two frames are `dump.390.load` and `dump.400.load`.
 
-Then download `dump.391.load`, `dump.392.load`, ..., `dump.399.load` to the same local directory. Open any dump file, go through these new dump files and identify the two frames between which the dislocation core starts to move. The two frames are `dump.398.load` and `dump.399.load`.
+Then download `dump.391.load`, `dump.392.load`, ..., `dump.399.load` to the same local directory. Open any dump file, go through these new dump files and identify the two frames between which the dislocation core starts to move. The two frames are `dump.393.load` and `dump.394.load`.
 
-Then the Peierls stress is the stress of the simulation cell corresponding to `dump.399.load`.
+Then the Peierls stress is the stress of the simulation cell corresponding to `dump.394.load`.
 
-In the file `strain-stress`, the first line corresponds to `dump.0.load`, and so line 400 corresponds to `dump.399.load`, i.e.,
+In the file `strain-stress`, the first line corresponds to `dump.0.load`, and so line 395 corresponds to `dump.394.load`, i.e.,
 
-	0.000400240702603493 -1169.50115394567
+	0.000395020465412986 -1171.21885571711
 
-As a result, the Peierls stress for the anti-twinning direction on the {112} plane is 1169.5 MPa, which is very close to the stress at P1 which was identified earlier.
+As a result, the Peierls stress for the anti-twinning direction on the {112} plane is 1171.2 MPa, which is very close to the stress at P1 which was identified earlier.
 
 In a general case, however,
 
