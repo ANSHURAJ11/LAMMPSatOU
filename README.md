@@ -1,6 +1,6 @@
 ## Introduction
 
-My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu/). In this repository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the help of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
+My name is [Anshu Raj](https://scholar.google.com/citations?user=3SNS6QsAAAAJ&hl=en), and I am a graduate research assistant in the [Computational Materials, Mechanics, and Manufacturing (CM<sup>3</sup>)](https://shuozhixu.github.io/group.html) lab at the [University of Oklahoma (OU)](https://www.ou.edu). In this repository, I will show you how to run atomistic simulations via LAMMPS on the OU Supercomputing Center for Education and Research ([OSCER](https://www.ou.edu/oscer)). This page was created based on [LAMMPSatUCSB](https://github.com/shuozhixu/LAMMPSatUCSB), with the help of [Dr. Shuozhi Xu](https://www.ou.edu/coe/ame/people/faculty/shuozhi-xu), the PI of the OU CM<sup>3</sup> lab.
 
 ## OSCER
 
@@ -33,9 +33,9 @@ In addition, members in the cm3atou group can also move files to
 
 	/ourdisk/hpc/cm3atou/dont_archive/username/
 
-where the maximum storage space for the cm3atou group is 55.8 TB. Unlike in `/scratch`, files in `/ourdisk` won't be deleted. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
+where the maximum storage space for the cm3atou group is 55.8 TB. Unlike in `/scratch`, files in `/ourdisk` won't be automatically deleted. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
 
-The cm3atou group currently has ten nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next [scheduled maintenance outage](https://www.ou.edu/oscer/maintenance).
+The cm3atou group currently owns one partition, named `cm3atou_el9`, on OSCER. This partition has ten nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next [scheduled maintenance outage](https://www.ou.edu/oscer/maintenance).
 
 ## Module
 
@@ -75,7 +75,7 @@ I personally recommend FileZilla. Below is an instruction:
 2. Open it.
 3. The first time you use it, File --> Site Manager --> New site --> rename it 'OSCER', then in the window on the right hand side:
       - Protocol: SFTP - SSH File Transfer Protocol
-      - Host: schooner.oscer.ou.edu
+      - Host: sooner.oscer.ou.edu
       - Logon Type: Normal
       - User: username
       - Password: username-pw
@@ -89,9 +89,9 @@ You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel
 
 On Windows, OU recommends [MobaXterm and PuTTY](https://www.ou.edu/oscer/support/machine_access).
 
-On Mac and Linux, without installing any new emulator, you may open the default terminal and type
+On MacOS and Linux, without installing any new emulator, you may open the default terminal and type
 
-	ssh username@schooner.oscer.ou.edu
+	ssh username@sooner.oscer.ou.edu
 
 then hit Return. Then you will be asked to provide your password. Type your own password, e.g.,
 
@@ -101,17 +101,19 @@ then hit Return.
 
 Hint: Type the password anyway even though nothing is showing up.
 
-To check the status of the cm3atou partition, type the following in your terminal,
+However, if you use the default terminal, you will need to enter the remote address and password each time you connect to OSCER, which can become tiresome if done frequently. On MacOS, you may use [termius](https://termius.com) which allows you to save your address and password, eliminating the need to re-enter them each time.
 
-	sinfo -p cm3atou
+On any terminal, to check the status of the `cm3atou_el9` partition, type the following in your terminal,
 
-To check the list of users that are currently running jobs on the cm3atou partition,
+	sinfo -p cm3atou_el9
 
-	squeue -p cm3atou
+To check the list of users who currently have running or pending jobs on this partition,
+
+	squeue -p cm3atou_el9
 
 To add the number of cores for each job to the list above,
 
-	squeue -p cm3atou -t all --Format=jobid:10,username:14,statecompact:6,numcpus:6,minmemory:8,timeused:12,timelimit:12,nodelist:8
+	squeue -p cm3atou_el9 -t all --Format=jobid:10,username:14,statecompact:6,numcpus:6,minmemory:8,timeused:12,timelimit:12,nodelist:8
 
 To check the status of all jobs of yours that are either running or pending,
 
@@ -123,6 +125,10 @@ To cancel a running job,
 
 	scancel JOBID
 	
+To cancel all running and pending jobs you submitted,
+
+	scancel -u username
+
 To find out more about a running job, including the direcotry where you submitted it,
 
 	scontrol show job JOBID
@@ -136,7 +142,7 @@ If you are not familiar with Linux, please refer to these webpages:
   - [Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
   - [Basic Linux commands](https://www.hostinger.com/tutorials/linux-commands)
 
-You also need a software package to edit text files on OSCER. Again, feel free to use anything. Here is [a selected list](https://en.wikipedia.org/wiki/List_of_text_editors). I recommend vim, which is already installed in OSCER (and most, if not all, Mac and Linux systems). If you are not familiar with vim, please refer to these webpages:
+You also need a software package to edit text files on OSCER. Again, feel free to use anything. Here is [a selected list](https://en.wikipedia.org/wiki/List_of_text_editors). I recommend vim, which is already installed in OSCER (and most, if not all, MacOS and Linux systems). If you are not familiar with vim, please refer to these webpages:
 
   - [vim 101](https://www.engadget.com/2012-07-10-vim-how-to.html)
   - [Getting started with vim](https://opensource.com/article/19/3/getting-started-vim)
@@ -164,13 +170,23 @@ Multiple versions of LAMMPS are installed on OSCER (try `module spider lammps` a
 
 To do that, download the file  `lmp_cms.sh` from this GitHub repository to your local computer, then upload it, via Filezilla, to your \$HOME on OSCER. Then in your terminal emulator, cd to \$HOME, and execute
 
+	el9
+	
+to enter the el9 container. Then
+	
 	sh lmp_cms.sh
 
-Note that the fourth command in `lmp_cms.sh` loads a module. If you cannot load it, try `module purge` first.
+Note that the fourth and fifth commands in `lmp_cms.sh` load two modules. If you cannot load them, try `module purge` first.
 
-Once the `sh` run is finished, you will find a file `lmp_mpi` in the `software/lammps-cms/src/` directory on OSCER. And that is the LAMMPS executable with MANYBODY, EXTRA-COMPUTE, MC, and MISC packages.
+Once the `sh` run is finished, you will find a file `lmp_mpi` in the `software/lammps-cms/src/` directory on OSCER. And that is the newly compiled LAMMPS executable.
 
 If you need additional [packages](https://docs.lammps.org/Packages_list.html), you can add them yourself by editing the file `lmp_cms.sh`, i.e., adding more `mpi yes-XXX` before `make mpi` .
+
+Once you compile LAMMPS and before submitting any jobs, type
+
+	exit
+
+to exit the el9 container.
 
 ## Example 1: Calculating the GSFE curve in a BCC metal
 
@@ -234,7 +250,7 @@ As usual, feel free to use any software to plot the curve. Here is a [selected l
 
 Now, go back to the file `lmp_gsfe.in` and read it. Look up the meaning of each LAMMPS command on [this page](https://lammps.sandia.gov/doc/Commands_all.html).
      
-Note: Only the cm3atou group members can use the partition cm3atou in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to [something else](https://www.ou.edu/oscer/support/partitions).
+Note: Only the cm3atou group members can use the partition `cm3atou_el9` in the batch file. If one were to use an OU-wide partition, change the partition name in `lmp_gsfe.batch` to [something else](https://www.ou.edu/oscer/support/partitions).
 
 ### OVITO
 
