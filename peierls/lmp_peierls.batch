@@ -1,7 +1,8 @@
 #!/bin/bash
 #
 #SBATCH --job-name=peierls
-#SBATCH --partition=cm3atou
+#SBATCH --container=el9hw
+#SBATCH --partition=cm3atou_el9
 #SBATCH --output=lmp_peierls.out
 #SBATCH --error=lmp_peierls.err
 #SBATCH --nodes=1
@@ -12,10 +13,9 @@
 
 # Defining the executable and scratch directory
 
-cd ${SLURM_SUBMIT_DIR}
+#cd ${SLURM_SUBMIT_DIR}
 
-module load intel/2022a
-#/bin/hostname
+module load intel/2023b
 
 # execute lammps
 echo "begin lammps"

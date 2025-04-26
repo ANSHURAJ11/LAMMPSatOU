@@ -1,7 +1,8 @@
 #!/bin/bash
 #
 #SBATCH --job-name=gsfe
-#SBATCH --partition=cm3atou
+#SBATCH --container=el9hw
+#SBATCH --partition=cm3atou_el9
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --output=lmp_gsfe.out
@@ -14,15 +15,15 @@
 
 # Defining the executable and scratch directory
 
-cd ${SLURM_SUBMIT_DIR}
+#cd ${SLURM_SUBMIT_DIR}
 
-module load intel/2022a
+module load intel/2023b
 
 # execute lammps
 echo "begin lammps"
 echo "the job is ${SLURM_JOB_ID}"
 
-rm -f gsfe gsfe_ori
+rm -f gsfe gsfe_ori dump.*
 
 mpirun ~/software/lammps-cms/src/lmp_mpi -in lmp_gsfe.in
 
