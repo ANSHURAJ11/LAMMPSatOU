@@ -33,7 +33,7 @@ In addition, members in the cm3atou group can also move files to
 
 	/ourdisk/hpc/cm3atou/dont_archive/username/
 
-where the maximum storage space for the cm3atou group is 55.8 TB. Unlike in `/scratch`, files in `/ourdisk` won't be automatically deleted. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
+where the maximum storage space for the cm3atou group is 74.4 TB. Unlike in `/scratch`, files in `/ourdisk` won't be automatically deleted. For large files (> 1GB), one can archieve files on OURRstore. For more information, please visit [this page](https://www.ou.edu/oscer/support/storage_on_hpc).
 
 The cm3atou group currently owns one partition, named `cm3atou_el9`, on OSCER. This partition has ten nodes, each of which has 128 CPU cores (with hyperthreading) and 257101 megabytes of memory. Jobs have no time limit. In practice, the time limit would be until the next [scheduled maintenance outage](https://www.ou.edu/oscer/maintenance).
 
