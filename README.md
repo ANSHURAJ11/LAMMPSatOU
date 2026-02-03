@@ -178,7 +178,7 @@ to enter the el9 container. Then
 
 Note that the fourth and fifth commands in `lmp_cms.sh` load two modules. If you cannot load them, try `module purge` first.
 
-Once the `sh` run is finished, you will find a file `lmp_mpi` in the `software/lammps-cms/src/` directory on OSCER. And that is the newly compiled LAMMPS executable.
+Wait until the `sh` run is finished. When it is running, do not disconnect from OSCER or turn off your local computer. Once the run is finished, you will find a file `lmp_mpi` in the `software/lammps-cms/src/` directory on OSCER. And that is the newly compiled LAMMPS executable.
 
 If you need additional [packages](https://docs.lammps.org/Packages_list.html), you can add them yourself by editing the file `lmp_cms.sh`, i.e., adding more `mpi yes-XXX` before `make mpi` .
 
