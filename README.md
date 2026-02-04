@@ -186,9 +186,9 @@ Once you compile LAMMPS and before submitting any jobs, type
 
 	exit
 
-to exit the el9 container.
+to exit the el9 container. Typing `exit` again will log you out of OSCER.
 
-Note: each time you log into OSCER, you are not in a container by default. At any point, to check if you are in any container, run `module avail`. If you see `module: command not found`, you are not in a container; if you see a list of modules, you are in a container. Then to identify which container you are in, run `cat /etc/os-release | grep VERSION_ID`, which will show `7` for EL7 or `9.7` for EL9.
+Note: Currently, sooner has two containers: el7 and el9. Each time you log into sooner, you are not in a container by default. At any point, to check if you are in any container, run `module avail`. If you see `module: command not found`, you are not in a container; if you see a list of modules, you are in a container. Then to identify which container you are in, run `cat /etc/os-release | grep VERSION_ID`, which will show `7` for el7 or `9.7` for el9.
 
 ## Example 1: Calculating the GSFE curve in a BCC metal
 
