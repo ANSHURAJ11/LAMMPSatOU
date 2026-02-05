@@ -256,7 +256,7 @@ Note: Only the cm3atou group members can use the partition `cm3atou_el9` in the 
 
 ### OVITO
 
-In the directory on OSCER, `oscer_gsfe`, you will find a lot of dump files, which contain information of atomic positions. To visualize these files, download them, via Filezilla, to your local computer. Then install [OVITO](http://www.ovito.org/) on your computer. Read [this page](http://www.ovito.org/docs/current/) to learn how to use it.
+In the directory on OSCER, `oscer_gsfe`, you will find a lot of dump files, which contain information of atomic positions. To visualize these files, download them, via Filezilla, to your local computer. Then install [OVITO Basic](http://www.ovito.org/) on your computer. Read [this page](http://www.ovito.org/docs/current/) to learn how to use it.
 
 ## Example 2: Calculating the Peierls stress of a screw dislocation in a BCC metal
 
