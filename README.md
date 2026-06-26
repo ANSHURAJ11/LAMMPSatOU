@@ -87,7 +87,7 @@ I personally recommend FileZilla. Below is an instruction:
 
 You also need a terminal emulator to 'talk with' OSCER, e.g., submit a job. Feel free to use any terminal emulator. Here is a [selected list](https://en.wikipedia.org/wiki/List_of_terminal_emulators).
 
-On Windows, OU recommends [MobaXterm and PuTTY](https://www.ou.edu/oscer/support/machine_access).
+On Windows, OU recommends [MobaXterm and PuTTY](https://www.ou.edu/oscer/getting-started/machine-access).
 
 On MacOS and Linux, without installing any new emulator, you may open the default terminal and type
 
